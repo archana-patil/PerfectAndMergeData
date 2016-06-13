@@ -1,0 +1,2296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAM2Model" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="PAM2Entities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="AutoMergeLogDetails" EntityType="PAM2Model.AutoMergeLogDetail" />
+    <EntitySet Name="AutoMergeRuleMasters" EntityType="PAM2Model.AutoMergeRuleMaster" />
+    <EntitySet Name="CategoryDetails" EntityType="PAM2Model.CategoryDetail" />
+    <EntitySet Name="CategoryMasters" EntityType="PAM2Model.CategoryMaster" />
+    <EntitySet Name="EntityAutoMergeRules" EntityType="PAM2Model.EntityAutoMergeRule" />
+    <EntitySet Name="EntitySettings" EntityType="PAM2Model.EntitySetting" />
+    <EntitySet Name="GroupRules" EntityType="PAM2Model.GroupRule" />
+    <EntitySet Name="GroupRuleDetails" EntityType="PAM2Model.GroupRuleDetail" />
+    <EntitySet Name="InactiveRecordSettings" EntityType="PAM2Model.InactiveRecordSetting" />
+    <EntitySet Name="LanguageMasters" EntityType="PAM2Model.LanguageMaster" />
+    <EntitySet Name="MatchAttributeSettings" EntityType="PAM2Model.MatchAttributeSetting" />
+    <EntitySet Name="MatchGroups" EntityType="PAM2Model.MatchGroup" />
+    <EntitySet Name="MatchGroupMasters" EntityType="PAM2Model.MatchGroupMaster" />
+    <EntitySet Name="MatchKeyMasters" EntityType="PAM2Model.MatchKeyMaster" />
+    <EntitySet Name="MatchRuleDropDowns" EntityType="PAM2Model.MatchRuleDropDown" />
+    <EntitySet Name="MatchRuleDropDownDetails" EntityType="PAM2Model.MatchRuleDropDownDetail" />
+    <EntitySet Name="MatchRuleMasters" EntityType="PAM2Model.MatchRuleMaster" />
+    <EntitySet Name="MemoFieldConfigurations" EntityType="PAM2Model.MemoFieldConfiguration" />
+    <EntitySet Name="PriorityMasters" EntityType="PAM2Model.PriorityMaster" />
+    <EntitySet Name="Roles" EntityType="PAM2Model.Role" />
+    <EntitySet Name="Sections" EntityType="PAM2Model.Section" />
+    <EntitySet Name="SessionAutoMergeRules" EntityType="PAM2Model.SessionAutoMergeRule" />
+    <EntitySet Name="SessionGroups" EntityType="PAM2Model.SessionGroup" />
+    <EntitySet Name="SessionMatchDetails" EntityType="PAM2Model.SessionMatchDetail" />
+    <EntitySet Name="SessionSections" EntityType="PAM2Model.SessionSection" />
+    <EntitySet Name="SmartMergeConfigurationSettings" EntityType="PAM2Model.SmartMergeConfigurationSetting" />
+    <EntitySet Name="Status" EntityType="PAM2Model.Status" />
+    <EntitySet Name="SuppressionHstories" EntityType="PAM2Model.SuppressionHstory" />
+    <EntitySet Name="SuppressionSettings" EntityType="PAM2Model.SuppressionSetting" />
+    <EntitySet Name="ThemeMasters" EntityType="PAM2Model.ThemeMaster" />
+    <EntitySet Name="Users" EntityType="PAM2Model.User" />
+    <EntitySet Name="UserRoles" EntityType="PAM2Model.UserRole" />
+    <AssociationSet Name="FK_AutoMergeLogDetails_AutoMergeLogDetails" Association="PAM2Model.FK_AutoMergeLogDetails_AutoMergeLogDetails">
+      <End Role="AutoMergeLogDetail" EntitySet="AutoMergeLogDetails" />
+      <End Role="AutoMergeLogDetail1" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_EntitySetting" Association="PAM2Model.FK_AutoMergeLogDetails_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="AutoMergeLogDetail" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_User" Association="PAM2Model.FK_AutoMergeLogDetails_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AutoMergeLogDetail" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityAutoMergeRule_AutoMergeRuleMaster" Association="PAM2Model.FK_EntityAutoMergeRule_AutoMergeRuleMaster">
+      <End Role="AutoMergeRuleMaster" EntitySet="AutoMergeRuleMasters" />
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryDetail_CategoryMaster" Association="PAM2Model.FK_CategoryDetail_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMasters" />
+      <End Role="CategoryDetail" EntitySet="CategoryDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityAutoMergeRule_EntitySetting" Association="PAM2Model.FK_EntityAutoMergeRule_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_EntityAutoMergeRule" Association="PAM2Model.FK_SessionAutoMergeRule_EntityAutoMergeRule">
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRules" />
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_EntitySetting" Association="PAM2Model.FK_MatchAttributeSetting_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_EntitySetting" Association="PAM2Model.FK_MatchGroup_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_EntitySetting" Association="PAM2Model.FK_Section_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_EntitySetting" Association="PAM2Model.FK_SuppressionHstory_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRule_MatchRuleMaster" Association="PAM2Model.FK_GroupRule_MatchRuleMaster">
+      <End Role="MatchRuleMaster" EntitySet="MatchRuleMasters" />
+      <End Role="GroupRule" EntitySet="GroupRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRuleDetail_GroupRule" Association="PAM2Model.FK_GroupRuleDetail_GroupRule">
+      <End Role="GroupRule" EntitySet="GroupRules" />
+      <End Role="GroupRuleDetail" EntitySet="GroupRuleDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InactiveRecordSettings_User" Association="PAM2Model.FK_InactiveRecordSettings_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="InactiveRecordSetting" EntitySet="InactiveRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InactiveRecordSettings_User1" Association="PAM2Model.FK_InactiveRecordSettings_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="InactiveRecordSetting" EntitySet="InactiveRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_MatchGroup" Association="PAM2Model.FK_MatchAttributeSetting_MatchGroup">
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_User" Association="PAM2Model.FK_MatchAttributeSetting_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_User1" Association="PAM2Model.FK_MatchAttributeSetting_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_MatchKeyMaster" Association="PAM2Model.FK_MatchGroup_MatchKeyMaster">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMasters" />
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_PriorityMaster" Association="PAM2Model.FK_MatchGroup_PriorityMaster">
+      <End Role="PriorityMaster" EntitySet="PriorityMasters" />
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_User" Association="PAM2Model.FK_MatchGroup_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_User1" Association="PAM2Model.FK_MatchGroup_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_MatchGroup" Association="PAM2Model.FK_SessionGroup_MatchGroup">
+      <End Role="MatchGroup" EntitySet="MatchGroups" />
+      <End Role="SessionGroup" EntitySet="SessionGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroupMaster_User" Association="PAM2Model.FK_MatchGroupMaster_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchGroupMaster" EntitySet="MatchGroupMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroupMaster_User1" Association="PAM2Model.FK_MatchGroupMaster_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MatchGroupMaster" EntitySet="MatchGroupMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_MatchKeyMaster" Association="PAM2Model.FK_SessionGroup_MatchKeyMaster">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMasters" />
+      <End Role="SessionGroup" EntitySet="SessionGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchRuleDropDownDetail_MatchRuleDropDown" Association="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDown">
+      <End Role="MatchRuleDropDown" EntitySet="MatchRuleDropDowns" />
+      <End Role="MatchRuleDropDownDetail" EntitySet="MatchRuleDropDownDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail" Association="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail">
+      <End Role="MatchRuleDropDownDetail" EntitySet="MatchRuleDropDownDetails" />
+      <End Role="MatchRuleDropDownDetail1" EntitySet="MatchRuleDropDownDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_PriorityMaster" Association="PAM2Model.FK_SessionGroup_PriorityMaster">
+      <End Role="PriorityMaster" EntitySet="PriorityMasters" />
+      <End Role="SessionGroup" EntitySet="SessionGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="PAM2Model.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_User" Association="PAM2Model.FK_Section_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_User1" Association="PAM2Model.FK_Section_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Section" EntitySet="Sections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_Section" Association="PAM2Model.FK_SessionSection_Section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="SessionSection" EntitySet="SessionSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_SessionAutoMergeRule" Association="PAM2Model.FK_SessionAutoMergeRule_SessionAutoMergeRule">
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRules" />
+      <End Role="SessionAutoMergeRule1" EntitySet="SessionAutoMergeRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_User" Association="PAM2Model.FK_SessionGroup_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionGroup" EntitySet="SessionGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_User" Association="PAM2Model.FK_SessionSection_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionSection" EntitySet="SessionSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_User1" Association="PAM2Model.FK_SessionSection_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionSection" EntitySet="SessionSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SmartMergeConfigurationSetting_User" Association="PAM2Model.FK_SmartMergeConfigurationSetting_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SmartMergeConfigurationSetting" EntitySet="SmartMergeConfigurationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SmartMergeConfigurationSetting_User1" Association="PAM2Model.FK_SmartMergeConfigurationSetting_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SmartMergeConfigurationSetting" EntitySet="SmartMergeConfigurationSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_Status" Association="PAM2Model.FK_SuppressionHstory_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_User" Association="PAM2Model.FK_SuppressionHstory_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_User1" Association="PAM2Model.FK_SuppressionHstory_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionSettings_User" Association="PAM2Model.FK_SuppressionSettings_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SuppressionSetting" EntitySet="SuppressionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionSettings_User1" Association="PAM2Model.FK_SuppressionSettings_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SuppressionSetting" EntitySet="SuppressionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="PAM2Model.FK_User_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User1" Association="PAM2Model.FK_User_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="User1" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="PAM2Model.FK_UserRole_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserRole" EntitySet="UserRoles" />
+    </AssociationSet>
+    <EntitySet Name="NoOfGroupsPerSessionUsages" EntityType="PAM2Model.NoOfGroupsPerSessionUsage" />
+    <EntitySet Name="NoOfSessionsPerEntityUsages" EntityType="PAM2Model.NoOfSessionsPerEntityUsage" />
+    <EntitySet Name="NoOfGroupsPerSessionUsageHistories" EntityType="PAM2Model.NoOfGroupsPerSessionUsageHistory" />
+    <EntitySet Name="NoOfSessionsPerEntityUsageHistories" EntityType="PAM2Model.NoOfSessionsPerEntityUsageHistory" />
+    <EntitySet Name="StatusReasonSettings" EntityType="PAM2Model.StatusReasonSetting" />
+    <EntitySet Name="BestRecordDetectionRules" EntityType="PAM2Model.BestRecordDetectionRule" />
+    <EntitySet Name="BestRecordRuleParameters" EntityType="PAM2Model.BestRecordRuleParameter" />
+    <EntitySet Name="BestRecordRuleParametersMasters" EntityType="PAM2Model.BestRecordRuleParametersMaster" />
+    <AssociationSet Name="FK_BestRecordRuleParameters_BestRecordRuleParametersMaster" Association="PAM2Model.FK_BestRecordRuleParameters_BestRecordRuleParametersMaster">
+      <End Role="BestRecordRuleParametersMaster" EntitySet="BestRecordRuleParametersMasters" />
+      <End Role="BestRecordRuleParameter" EntitySet="BestRecordRuleParameters" />
+    </AssociationSet>
+    <EntitySet Name="BestRecordDetectionSettings" EntityType="PAM2Model.BestRecordDetectionSetting" />
+    <EntitySet Name="SessionBestRecordSettings" EntityType="PAM2Model.SessionBestRecordSetting" />
+    <AssociationSet Name="FK_BestRecordDetectionSettings_BestRecordDetectionRules" Association="PAM2Model.FK_BestRecordDetectionSettings_BestRecordDetectionRules">
+      <End Role="BestRecordDetectionRule" EntitySet="BestRecordDetectionRules" />
+      <End Role="BestRecordDetectionSetting" EntitySet="BestRecordDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster" Association="PAM2Model.FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster">
+      <End Role="BestRecordRuleParametersMaster" EntitySet="BestRecordRuleParametersMasters" />
+      <End Role="BestRecordDetectionSetting" EntitySet="BestRecordDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionBestRecordSettings_BestRecordDetectionSettings" Association="PAM2Model.FK_SessionBestRecordSettings_BestRecordDetectionSettings">
+      <End Role="BestRecordDetectionSetting" EntitySet="BestRecordDetectionSettings" />
+      <End Role="SessionBestRecordSetting" EntitySet="SessionBestRecordSettings" />
+    </AssociationSet>
+    <EntitySet Name="BestFieldDetRuleParameters" EntityType="PAM2Model.BestFieldDetRuleParameter" />
+    <EntitySet Name="BestFieldsDetRuleParametersMasters" EntityType="PAM2Model.BestFieldsDetRuleParametersMaster" />
+    <AssociationSet Name="FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster" Association="PAM2Model.FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster">
+      <End Role="BestFieldsDetRuleParametersMaster" EntitySet="BestFieldsDetRuleParametersMasters" />
+      <End Role="BestFieldDetRuleParameter" EntitySet="BestFieldDetRuleParameters" />
+    </AssociationSet>
+    <EntitySet Name="BestFieldDetectionRuleTypes" EntityType="PAM2Model.BestFieldDetectionRuleType" />
+    <EntitySet Name="AutoPromoteAndFillLogDetails" EntityType="PAM2Model.AutoPromoteAndFillLogDetail" />
+    <AssociationSet Name="FK_AutoPromoteAndFill_EntitySetting" Association="PAM2Model.FK_AutoPromoteAndFill_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="AutoPromoteAndFillLogDetail" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoPromoteAndFill_User" Association="PAM2Model.FK_AutoPromoteAndFill_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AutoPromoteAndFillLogDetail" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <EntitySet Name="BestFieldDetectionRules" EntityType="PAM2Model.BestFieldDetectionRule" />
+    <AssociationSet Name="FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes" Association="PAM2Model.FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes">
+      <End Role="BestFieldDetectionRuleType" EntitySet="BestFieldDetectionRuleTypes" />
+      <End Role="BestFieldDetectionRule" EntitySet="BestFieldDetectionRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetRuleParameters_BestRecordDetectionRules" Association="PAM2Model.FK_BestFieldDetRuleParameters_BestRecordDetectionRules">
+      <End Role="BestFieldDetectionRule" EntitySet="BestFieldDetectionRules" />
+      <End Role="BestFieldDetRuleParameter" EntitySet="BestFieldDetRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordRuleParameters_BestRecordDetectionRules" Association="PAM2Model.FK_BestRecordRuleParameters_BestRecordDetectionRules">
+      <End Role="BestRecordDetectionRule" EntitySet="BestRecordDetectionRules" />
+      <End Role="BestRecordRuleParameter" EntitySet="BestRecordRuleParameters" />
+    </AssociationSet>
+    <EntitySet Name="SessionThresholdSettings" EntityType="PAM2Model.SessionThresholdSetting" />
+    <AssociationSet Name="FK_SessionThresholdSetting_LanguageMaster" Association="PAM2Model.FK_SessionThresholdSetting_LanguageMaster">
+      <End Role="LanguageMaster" EntitySet="LanguageMasters" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_SessionThresholdSetting" Association="PAM2Model.FK_SessionThresholdSetting_SessionThresholdSetting">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMasters" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_User" Association="PAM2Model.FK_SessionThresholdSetting_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_User1" Association="PAM2Model.FK_SessionThresholdSetting_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSettings" />
+    </AssociationSet>
+    <EntitySet Name="AttributeSettings" EntityType="PAM2Model.AttributeSetting" />
+    <AssociationSet Name="FK_AttributeSetting_EntitySetting" Association="PAM2Model.FK_AttributeSetting_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_Section" Association="PAM2Model.FK_AttributeSetting_Section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_User" Association="PAM2Model.FK_AttributeSetting_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_User1" Association="PAM2Model.FK_AttributeSetting_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+    </AssociationSet>
+    <EntitySet Name="BestFieldDetectionSettings" EntityType="PAM2Model.BestFieldDetectionSetting" />
+    <EntitySet Name="BestFieldDetPicklistFieldDetails" EntityType="PAM2Model.BestFieldDetPicklistFieldDetail" />
+    <AssociationSet Name="FK_BestFieldDetectionSettings_AttributeSetting" Association="PAM2Model.FK_BestFieldDetectionSettings_AttributeSetting">
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+      <End Role="BestFieldDetectionSetting" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_BestFieldDetectionRules" Association="PAM2Model.FK_BestFieldDetectionSettings_BestFieldDetectionRules">
+      <End Role="BestFieldDetectionRule" EntitySet="BestFieldDetectionRules" />
+      <End Role="BestFieldDetectionSetting" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster" Association="PAM2Model.FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster">
+      <End Role="BestFieldsDetRuleParametersMaster" EntitySet="BestFieldsDetRuleParametersMasters" />
+      <End Role="BestFieldDetectionSetting" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_Section" Association="PAM2Model.FK_BestFieldDetectionSettings_Section">
+      <End Role="Section" EntitySet="Sections" />
+      <End Role="BestFieldDetectionSetting" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings" Association="PAM2Model.FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings">
+      <End Role="BestFieldDetectionSetting" EntitySet="BestFieldDetectionSettings" />
+      <End Role="BestFieldDetPicklistFieldDetail" EntitySet="BestFieldDetPicklistFieldDetails" />
+    </AssociationSet>
+    <EntitySet Name="Sessions" EntityType="PAM2Model.Session" />
+    <EntitySet Name="SessionResults" EntityType="PAM2Model.SessionResult" />
+    <AssociationSet Name="FK_AttributeSetting_Session" Association="PAM2Model.FK_AttributeSetting_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="AttributeSetting" EntitySet="AttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_Session" Association="PAM2Model.FK_AutoMergeLogDetails_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="AutoMergeLogDetail" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoPromoteAndFill_Session" Association="PAM2Model.FK_AutoPromoteAndFill_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="AutoPromoteAndFillLogDetail" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_EntitySetting" Association="PAM2Model.FK_Session_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySettings" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_Session" Association="PAM2Model.FK_MatchAttributeSetting_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Session" Association="PAM2Model.FK_Session_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="Session1" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Status" Association="PAM2Model.FK_Session_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_User" Association="PAM2Model.FK_Session_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_User1" Association="PAM2Model.FK_Session_User1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Session" EntitySet="Sessions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_Session" Association="PAM2Model.FK_SessionAutoMergeRule_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionBestRecordSettings_Session" Association="PAM2Model.FK_SessionBestRecordSettings_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionBestRecordSetting" EntitySet="SessionBestRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_Session" Association="PAM2Model.FK_SessionGroup_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionGroup" EntitySet="SessionGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionMatchDetail_Session" Association="PAM2Model.FK_SessionMatchDetail_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionMatchDetail" EntitySet="SessionMatchDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_Session" Association="PAM2Model.FK_SessionResult_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionResult" EntitySet="SessionResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_Session" Association="PAM2Model.FK_SessionSection_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionSection" EntitySet="SessionSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_Session" Association="PAM2Model.FK_SessionThresholdSetting_Session">
+      <End Role="Session" EntitySet="Sessions" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_Status" Association="PAM2Model.FK_SessionResult_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SessionResult" EntitySet="SessionResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_User" Association="PAM2Model.FK_SessionResult_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="SessionResult" EntitySet="SessionResults" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AutoMergeLogDetail">
+    <Key>
+      <PropertyRef Name="AutoMergeLogId" />
+    </Key>
+    <Property Type="Guid" Name="AutoMergeLogId" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="String" Name="SessionName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="StartDateTime" Precision="3" />
+    <Property Type="DateTime" Name="EndDateTime" Precision="3" />
+    <Property Type="String" Name="AppliedAutoMergeRules" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="RecordsProcessed" />
+    <Property Type="Guid" Name="LoggedInUser" />
+    <Property Type="Decimal" Name="GroupNo" Precision="10" Scale="2" />
+    <NavigationProperty Name="AutoMergeLogDetails1" Relationship="PAM2Model.FK_AutoMergeLogDetails_AutoMergeLogDetails" FromRole="AutoMergeLogDetail" ToRole="AutoMergeLogDetail1" />
+    <NavigationProperty Name="AutoMergeLogDetail1" Relationship="PAM2Model.FK_AutoMergeLogDetails_AutoMergeLogDetails" FromRole="AutoMergeLogDetail1" ToRole="AutoMergeLogDetail" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_AutoMergeLogDetails_EntitySetting" FromRole="AutoMergeLogDetail" ToRole="EntitySetting" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_AutoMergeLogDetails_User" FromRole="AutoMergeLogDetail" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_AutoMergeLogDetails_Session" FromRole="AutoMergeLogDetail" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="AutoMergeRuleMaster">
+    <Key>
+      <PropertyRef Name="AutoMergeRuleId" />
+    </Key>
+    <Property Type="Guid" Name="AutoMergeRuleId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Status" />
+    <NavigationProperty Name="EntityAutoMergeRules" Relationship="PAM2Model.FK_EntityAutoMergeRule_AutoMergeRuleMaster" FromRole="AutoMergeRuleMaster" ToRole="EntityAutoMergeRule" />
+  </EntityType>
+  <EntityType Name="CategoryDetail">
+    <Key>
+      <PropertyRef Name="CategoryDetaild" />
+    </Key>
+    <Property Type="Guid" Name="CategoryDetaild" Nullable="false" />
+    <Property Type="Guid" Name="CategoryId" />
+    <Property Type="String" Name="FromText" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ToText" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsMaster" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdateBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <NavigationProperty Name="CategoryMaster" Relationship="PAM2Model.FK_CategoryDetail_CategoryMaster" FromRole="CategoryDetail" ToRole="CategoryMaster" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Type="Guid" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsMaster" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdateBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <NavigationProperty Name="CategoryDetails" Relationship="PAM2Model.FK_CategoryDetail_CategoryMaster" FromRole="CategoryMaster" ToRole="CategoryDetail" />
+  </EntityType>
+  <EntityType Name="EntityAutoMergeRule">
+    <Key>
+      <PropertyRef Name="EntityRuleId" />
+    </Key>
+    <Property Type="Guid" Name="EntityRuleId" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" />
+    <Property Type="Guid" Name="AutoMergeRuleId" />
+    <Property Type="Boolean" Name="Status" />
+    <NavigationProperty Name="AutoMergeRuleMaster" Relationship="PAM2Model.FK_EntityAutoMergeRule_AutoMergeRuleMaster" FromRole="EntityAutoMergeRule" ToRole="AutoMergeRuleMaster" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_EntityAutoMergeRule_EntitySetting" FromRole="EntityAutoMergeRule" ToRole="EntitySetting" />
+    <NavigationProperty Name="SessionAutoMergeRules" Relationship="PAM2Model.FK_SessionAutoMergeRule_EntityAutoMergeRule" FromRole="EntityAutoMergeRule" ToRole="SessionAutoMergeRule" />
+  </EntityType>
+  <EntityType Name="EntitySetting">
+    <Key>
+      <PropertyRef Name="EntitySettingId" />
+    </Key>
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="String" Name="EntityLogicalName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EntityDisplayName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AutoMergeLogDetails" Relationship="PAM2Model.FK_AutoMergeLogDetails_EntitySetting" FromRole="EntitySetting" ToRole="AutoMergeLogDetail" />
+    <NavigationProperty Name="EntityAutoMergeRules" Relationship="PAM2Model.FK_EntityAutoMergeRule_EntitySetting" FromRole="EntitySetting" ToRole="EntityAutoMergeRule" />
+    <NavigationProperty Name="MatchAttributeSettings" Relationship="PAM2Model.FK_MatchAttributeSetting_EntitySetting" FromRole="EntitySetting" ToRole="MatchAttributeSetting" />
+    <NavigationProperty Name="MatchGroups" Relationship="PAM2Model.FK_MatchGroup_EntitySetting" FromRole="EntitySetting" ToRole="MatchGroup" />
+    <NavigationProperty Name="Sections" Relationship="PAM2Model.FK_Section_EntitySetting" FromRole="EntitySetting" ToRole="Section" />
+    <NavigationProperty Name="SuppressionHstories" Relationship="PAM2Model.FK_SuppressionHstory_EntitySetting" FromRole="EntitySetting" ToRole="SuppressionHstory" />
+    <NavigationProperty Name="AutoPromoteAndFillLogDetails" Relationship="PAM2Model.FK_AutoPromoteAndFill_EntitySetting" FromRole="EntitySetting" ToRole="AutoPromoteAndFillLogDetail" />
+    <NavigationProperty Name="AttributeSettings" Relationship="PAM2Model.FK_AttributeSetting_EntitySetting" FromRole="EntitySetting" ToRole="AttributeSetting" />
+    <NavigationProperty Name="Sessions" Relationship="PAM2Model.FK_Session_EntitySetting" FromRole="EntitySetting" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="GroupRule">
+    <Key>
+      <PropertyRef Name="GroupRuleId" />
+    </Key>
+    <Property Type="Guid" Name="GroupRuleId" Nullable="false" />
+    <Property Type="Guid" Name="GroupId" Nullable="false" />
+    <Property Type="Guid" Name="RuleId" />
+    <Property Type="Boolean" Name="IsMaster" Nullable="false" />
+    <Property Type="Int32" Name="Order" />
+    <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MatchRuleMaster" Relationship="PAM2Model.FK_GroupRule_MatchRuleMaster" FromRole="GroupRule" ToRole="MatchRuleMaster" />
+    <NavigationProperty Name="GroupRuleDetails" Relationship="PAM2Model.FK_GroupRuleDetail_GroupRule" FromRole="GroupRule" ToRole="GroupRuleDetail" />
+  </EntityType>
+  <EntityType Name="GroupRuleDetail">
+    <Key>
+      <PropertyRef Name="GroupRuleDetailId" />
+    </Key>
+    <Property Type="Guid" Name="GroupRuleDetailId" Nullable="false" />
+    <Property Type="Guid" Name="GroupRuleId" Nullable="false" />
+    <Property Type="String" Name="AttributeEnum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AttributeValue" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GroupRule" Relationship="PAM2Model.FK_GroupRuleDetail_GroupRule" FromRole="GroupRuleDetail" ToRole="GroupRule" />
+  </EntityType>
+  <EntityType Name="InactiveRecordSetting">
+    <Key>
+      <PropertyRef Name="InactiveRecordSettingsId" />
+    </Key>
+    <Property Type="Guid" Name="InactiveRecordSettingsId" Nullable="false" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_InactiveRecordSettings_User" FromRole="InactiveRecordSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_InactiveRecordSettings_User1" FromRole="InactiveRecordSetting" ToRole="User" />
+  </EntityType>
+  <EntityType Name="LanguageMaster">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Type="Guid" Name="LanguageId" Nullable="false" />
+    <Property Type="String" Name="LanguageName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CultureCode" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SessionThresholdSettings" Relationship="PAM2Model.FK_SessionThresholdSetting_LanguageMaster" FromRole="LanguageMaster" ToRole="SessionThresholdSetting" />
+  </EntityType>
+  <EntityType Name="MatchAttributeSetting">
+    <Key>
+      <PropertyRef Name="MatchAttributeSettingId" />
+    </Key>
+    <Property Type="Guid" Name="MatchAttributeSettingId" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Guid" Name="MatchGroupId" />
+    <Property Type="String" Name="SchemaName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="SessionId" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <Property Type="Int32" Name="DisplayOrder" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_MatchAttributeSetting_EntitySetting" FromRole="MatchAttributeSetting" ToRole="EntitySetting" />
+    <NavigationProperty Name="MatchGroup" Relationship="PAM2Model.FK_MatchAttributeSetting_MatchGroup" FromRole="MatchAttributeSetting" ToRole="MatchGroup" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_MatchAttributeSetting_User" FromRole="MatchAttributeSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_MatchAttributeSetting_User1" FromRole="MatchAttributeSetting" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_MatchAttributeSetting_Session" FromRole="MatchAttributeSetting" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="MatchGroup">
+    <Key>
+      <PropertyRef Name="MatchGroupId" />
+    </Key>
+    <Property Type="Guid" Name="MatchGroupId" Nullable="false" />
+    <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Boolean" Name="IsMaster" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <Property Type="Int32" Name="DisplayOrder" />
+    <Property Type="Guid" Name="PriorityId" />
+    <Property Type="Boolean" Name="ExcludeFromMasterKey" />
+    <Property Type="Guid" Name="MatchKeyID" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_MatchGroup_EntitySetting" FromRole="MatchGroup" ToRole="EntitySetting" />
+    <NavigationProperty Name="MatchAttributeSettings" Relationship="PAM2Model.FK_MatchAttributeSetting_MatchGroup" FromRole="MatchGroup" ToRole="MatchAttributeSetting" />
+    <NavigationProperty Name="MatchKeyMaster" Relationship="PAM2Model.FK_MatchGroup_MatchKeyMaster" FromRole="MatchGroup" ToRole="MatchKeyMaster" />
+    <NavigationProperty Name="PriorityMaster" Relationship="PAM2Model.FK_MatchGroup_PriorityMaster" FromRole="MatchGroup" ToRole="PriorityMaster" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_MatchGroup_User" FromRole="MatchGroup" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_MatchGroup_User1" FromRole="MatchGroup" ToRole="User" />
+    <NavigationProperty Name="SessionGroups" Relationship="PAM2Model.FK_SessionGroup_MatchGroup" FromRole="MatchGroup" ToRole="SessionGroup" />
+  </EntityType>
+  <EntityType Name="MatchGroupMaster">
+    <Key>
+      <PropertyRef Name="MatchGroupId" />
+    </Key>
+    <Property Type="Guid" Name="MatchGroupId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_MatchGroupMaster_User" FromRole="MatchGroupMaster" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_MatchGroupMaster_User1" FromRole="MatchGroupMaster" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MatchKeyMaster">
+    <Key>
+      <PropertyRef Name="MatchKeyID" />
+    </Key>
+    <Property Type="Guid" Name="MatchKeyID" Nullable="false" />
+    <Property Type="String" Name="MatchKey" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Enum" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MatchGroups" Relationship="PAM2Model.FK_MatchGroup_MatchKeyMaster" FromRole="MatchKeyMaster" ToRole="MatchGroup" />
+    <NavigationProperty Name="SessionGroups" Relationship="PAM2Model.FK_SessionGroup_MatchKeyMaster" FromRole="MatchKeyMaster" ToRole="SessionGroup" />
+    <NavigationProperty Name="SessionThresholdSettings" Relationship="PAM2Model.FK_SessionThresholdSetting_SessionThresholdSetting" FromRole="MatchKeyMaster" ToRole="SessionThresholdSetting" />
+  </EntityType>
+  <EntityType Name="MatchRuleDropDown">
+    <Key>
+      <PropertyRef Name="DropDownId" />
+    </Key>
+    <Property Type="Guid" Name="DropDownId" Nullable="false" />
+    <Property Type="String" Name="Enum" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MatchRuleDropDownDetails" Relationship="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDown" FromRole="MatchRuleDropDown" ToRole="MatchRuleDropDownDetail" />
+  </EntityType>
+  <EntityType Name="MatchRuleDropDownDetail">
+    <Key>
+      <PropertyRef Name="DropDownDetailId" />
+    </Key>
+    <Property Type="Guid" Name="DropDownDetailId" Nullable="false" />
+    <Property Type="Guid" Name="DropDownId" Nullable="false" />
+    <Property Type="String" Name="Enum" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ParentId" />
+    <NavigationProperty Name="MatchRuleDropDown" Relationship="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDown" FromRole="MatchRuleDropDownDetail" ToRole="MatchRuleDropDown" />
+    <NavigationProperty Name="MatchRuleDropDownDetail1" Relationship="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail" FromRole="MatchRuleDropDownDetail" ToRole="MatchRuleDropDownDetail1" />
+    <NavigationProperty Name="MatchRuleDropDownDetail2" Relationship="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail" FromRole="MatchRuleDropDownDetail1" ToRole="MatchRuleDropDownDetail" />
+  </EntityType>
+  <EntityType Name="MatchRuleMaster">
+    <Key>
+      <PropertyRef Name="MatchRuleId" />
+    </Key>
+    <Property Type="Guid" Name="MatchRuleId" Nullable="false" />
+    <Property Type="String" Name="RuleName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Enum" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GroupRules" Relationship="PAM2Model.FK_GroupRule_MatchRuleMaster" FromRole="MatchRuleMaster" ToRole="GroupRule" />
+  </EntityType>
+  <EntityType Name="MemoFieldConfiguration">
+    <Key>
+      <PropertyRef Name="ConfigId" />
+    </Key>
+    <Property Type="Guid" Name="ConfigId" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="String" Name="SchemaName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DisplayName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CustomName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DefaultAction" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="ModifiedBy" />
+    <Property Type="DateTime" Name="ModifiedDate" Precision="3" />
+  </EntityType>
+  <EntityType Name="PriorityMaster">
+    <Key>
+      <PropertyRef Name="PriorityId" />
+    </Key>
+    <Property Type="Guid" Name="PriorityId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Decimal" Name="Priority" Precision="18" Scale="0" />
+    <NavigationProperty Name="MatchGroups" Relationship="PAM2Model.FK_MatchGroup_PriorityMaster" FromRole="PriorityMaster" ToRole="MatchGroup" />
+    <NavigationProperty Name="SessionGroups" Relationship="PAM2Model.FK_SessionGroup_PriorityMaster" FromRole="PriorityMaster" ToRole="SessionGroup" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserRoles" Relationship="PAM2Model.FK_UserRole_Role" FromRole="Role" ToRole="UserRole" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Type="Guid" Name="SectionId" Nullable="false" />
+    <Property Type="String" Name="SectionName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DisplayOrder" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="7" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_Section_EntitySetting" FromRole="Section" ToRole="EntitySetting" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_Section_User" FromRole="Section" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_Section_User1" FromRole="Section" ToRole="User" />
+    <NavigationProperty Name="SessionSections" Relationship="PAM2Model.FK_SessionSection_Section" FromRole="Section" ToRole="SessionSection" />
+    <NavigationProperty Name="AttributeSettings" Relationship="PAM2Model.FK_AttributeSetting_Section" FromRole="Section" ToRole="AttributeSetting" />
+    <NavigationProperty Name="BestFieldDetectionSettings" Relationship="PAM2Model.FK_BestFieldDetectionSettings_Section" FromRole="Section" ToRole="BestFieldDetectionSetting" />
+  </EntityType>
+  <EntityType Name="SessionAutoMergeRule">
+    <Key>
+      <PropertyRef Name="SessionAutoMergeRuleId" />
+    </Key>
+    <Property Type="Guid" Name="SessionAutoMergeRuleId" Nullable="false" />
+    <Property Type="Guid" Name="EntityAutoMergeRuleId" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Boolean" Name="Status" />
+    <NavigationProperty Name="EntityAutoMergeRule" Relationship="PAM2Model.FK_SessionAutoMergeRule_EntityAutoMergeRule" FromRole="SessionAutoMergeRule" ToRole="EntityAutoMergeRule" />
+    <NavigationProperty Name="SessionAutoMergeRule1" Relationship="PAM2Model.FK_SessionAutoMergeRule_SessionAutoMergeRule" FromRole="SessionAutoMergeRule" ToRole="SessionAutoMergeRule1" />
+    <NavigationProperty Name="SessionAutoMergeRule2" Relationship="PAM2Model.FK_SessionAutoMergeRule_SessionAutoMergeRule" FromRole="SessionAutoMergeRule1" ToRole="SessionAutoMergeRule" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionAutoMergeRule_Session" FromRole="SessionAutoMergeRule" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="SessionGroup">
+    <Key>
+      <PropertyRef Name="SessionGroupId" />
+    </Key>
+    <Property Type="Guid" Name="SessionGroupId" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Guid" Name="MatchGroupId" />
+    <Property Type="Guid" Name="PriorityId" />
+    <Property Type="Boolean" Name="ExcludeFromMasterKey" />
+    <Property Type="Guid" Name="MatchKeyID" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <NavigationProperty Name="MatchGroup" Relationship="PAM2Model.FK_SessionGroup_MatchGroup" FromRole="SessionGroup" ToRole="MatchGroup" />
+    <NavigationProperty Name="MatchKeyMaster" Relationship="PAM2Model.FK_SessionGroup_MatchKeyMaster" FromRole="SessionGroup" ToRole="MatchKeyMaster" />
+    <NavigationProperty Name="PriorityMaster" Relationship="PAM2Model.FK_SessionGroup_PriorityMaster" FromRole="SessionGroup" ToRole="PriorityMaster" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SessionGroup_User" FromRole="SessionGroup" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionGroup_Session" FromRole="SessionGroup" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="SessionMatchDetail">
+    <Key>
+      <PropertyRef Name="SessionMatchId" />
+    </Key>
+    <Property Type="Guid" Name="SessionMatchId" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Int32" Name="RecordsFed" Nullable="false" />
+    <Property Type="Int32" Name="DuplicatesFound" />
+    <Property Type="Int32" Name="ConfirmedResultCount" />
+    <Property Type="Int32" Name="UnsureResultCount" />
+    <Property Type="String" Name="MatchStatus" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionMatchDetail_Session" FromRole="SessionMatchDetail" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="SessionSection">
+    <Key>
+      <PropertyRef Name="SessionSectionId" />
+    </Key>
+    <Property Type="Guid" Name="SessionSectionId" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Guid" Name="SectionId" Nullable="false" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+    <NavigationProperty Name="Section" Relationship="PAM2Model.FK_SessionSection_Section" FromRole="SessionSection" ToRole="Section" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SessionSection_User" FromRole="SessionSection" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_SessionSection_User1" FromRole="SessionSection" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionSection_Session" FromRole="SessionSection" ToRole="Session" />
+  </EntityType>
+  <EntityType Name="SmartMergeConfigurationSetting">
+    <Key>
+      <PropertyRef Name="SmartMergeConfigId" />
+    </Key>
+    <Property Type="Guid" Name="SmartMergeConfigId" Nullable="false" />
+    <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="DataValue" />
+    <Property Type="DateTime" Name="StartDateTime" Precision="3" />
+    <Property Type="DateTime" Name="EndDateTime" Precision="3" />
+    <Property Type="Boolean" Name="Status" />
+    <Property Type="Int32" Name="SystemIdleWaitTiimeInMinutes" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SmartMergeConfigurationSetting_User" FromRole="SmartMergeConfigurationSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_SmartMergeConfigurationSetting_User1" FromRole="SmartMergeConfigurationSetting" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Type="Guid" Name="StatusId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Enum" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SuppressionHstories" Relationship="PAM2Model.FK_SuppressionHstory_Status" FromRole="Status" ToRole="SuppressionHstory" />
+    <NavigationProperty Name="Sessions" Relationship="PAM2Model.FK_Session_Status" FromRole="Status" ToRole="Session" />
+    <NavigationProperty Name="SessionResults" Relationship="PAM2Model.FK_SessionResult_Status" FromRole="Status" ToRole="SessionResult" />
+  </EntityType>
+  <EntityType Name="SuppressionHstory">
+    <Key>
+      <PropertyRef Name="SuppressionHistoryId" />
+    </Key>
+    <Property Type="Guid" Name="SuppressionHistoryId" Nullable="false" />
+    <Property Type="String" Name="RecordType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Guid" Name="ReviewStatus" Nullable="false" />
+    <Property Type="Guid" Name="PrimaryId" Nullable="false" />
+    <Property Type="Guid" Name="SecondaryId" Nullable="false" />
+    <Property Type="String" Name="SuppressKey" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ReviewedBy" Nullable="false" />
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_SuppressionHstory_EntitySetting" FromRole="SuppressionHstory" ToRole="EntitySetting" />
+    <NavigationProperty Name="Status" Relationship="PAM2Model.FK_SuppressionHstory_Status" FromRole="SuppressionHstory" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SuppressionHstory_User" FromRole="SuppressionHstory" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_SuppressionHstory_User1" FromRole="SuppressionHstory" ToRole="User" />
+  </EntityType>
+  <EntityType Name="SuppressionSetting">
+    <Key>
+      <PropertyRef Name="SuppressionSettingsId" />
+    </Key>
+    <Property Type="Guid" Name="SuppressionSettingsId" Nullable="false" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="0" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="0" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SuppressionSettings_User" FromRole="SuppressionSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_SuppressionSettings_User1" FromRole="SuppressionSetting" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ThemeMaster">
+    <Key>
+      <PropertyRef Name="ThemeId" />
+    </Key>
+    <Property Type="Guid" Name="ThemeId" Nullable="false" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ThemeFileName" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsApplied" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="CRMUserId" />
+    <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="IsPrimary" />
+    <Property Type="Boolean" Name="SkipDeferred" />
+    <Property Type="Int32" Name="GridWidth" />
+    <Property Type="Int32" Name="GridHeight" />
+    <Property Type="Guid" Name="CreatedBy" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <Property Type="Guid" Name="UpdatedBy" />
+    <Property Type="DateTime" Name="UpdateDate" Precision="3" />
+    <Property Type="Boolean" Name="IsDeleted" />
+    <Property Type="Boolean" Name="AreTermsAccepted" />
+    <NavigationProperty Name="AutoMergeLogDetails" Relationship="PAM2Model.FK_AutoMergeLogDetails_User" FromRole="User" ToRole="AutoMergeLogDetail" />
+    <NavigationProperty Name="InactiveRecordSettings" Relationship="PAM2Model.FK_InactiveRecordSettings_User" FromRole="User" ToRole="InactiveRecordSetting" />
+    <NavigationProperty Name="InactiveRecordSettings1" Relationship="PAM2Model.FK_InactiveRecordSettings_User1" FromRole="User" ToRole="InactiveRecordSetting" />
+    <NavigationProperty Name="MatchAttributeSettings" Relationship="PAM2Model.FK_MatchAttributeSetting_User" FromRole="User" ToRole="MatchAttributeSetting" />
+    <NavigationProperty Name="MatchAttributeSettings1" Relationship="PAM2Model.FK_MatchAttributeSetting_User1" FromRole="User" ToRole="MatchAttributeSetting" />
+    <NavigationProperty Name="MatchGroups" Relationship="PAM2Model.FK_MatchGroup_User" FromRole="User" ToRole="MatchGroup" />
+    <NavigationProperty Name="MatchGroups1" Relationship="PAM2Model.FK_MatchGroup_User1" FromRole="User" ToRole="MatchGroup" />
+    <NavigationProperty Name="MatchGroupMasters" Relationship="PAM2Model.FK_MatchGroupMaster_User" FromRole="User" ToRole="MatchGroupMaster" />
+    <NavigationProperty Name="MatchGroupMasters1" Relationship="PAM2Model.FK_MatchGroupMaster_User1" FromRole="User" ToRole="MatchGroupMaster" />
+    <NavigationProperty Name="Sections" Relationship="PAM2Model.FK_Section_User" FromRole="User" ToRole="Section" />
+    <NavigationProperty Name="Sections1" Relationship="PAM2Model.FK_Section_User1" FromRole="User" ToRole="Section" />
+    <NavigationProperty Name="SessionGroups" Relationship="PAM2Model.FK_SessionGroup_User" FromRole="User" ToRole="SessionGroup" />
+    <NavigationProperty Name="SessionSections" Relationship="PAM2Model.FK_SessionSection_User" FromRole="User" ToRole="SessionSection" />
+    <NavigationProperty Name="SessionSections1" Relationship="PAM2Model.FK_SessionSection_User1" FromRole="User" ToRole="SessionSection" />
+    <NavigationProperty Name="SmartMergeConfigurationSettings" Relationship="PAM2Model.FK_SmartMergeConfigurationSetting_User" FromRole="User" ToRole="SmartMergeConfigurationSetting" />
+    <NavigationProperty Name="SmartMergeConfigurationSettings1" Relationship="PAM2Model.FK_SmartMergeConfigurationSetting_User1" FromRole="User" ToRole="SmartMergeConfigurationSetting" />
+    <NavigationProperty Name="SuppressionHstories" Relationship="PAM2Model.FK_SuppressionHstory_User" FromRole="User" ToRole="SuppressionHstory" />
+    <NavigationProperty Name="SuppressionHstories1" Relationship="PAM2Model.FK_SuppressionHstory_User1" FromRole="User" ToRole="SuppressionHstory" />
+    <NavigationProperty Name="SuppressionSettings" Relationship="PAM2Model.FK_SuppressionSettings_User" FromRole="User" ToRole="SuppressionSetting" />
+    <NavigationProperty Name="SuppressionSettings1" Relationship="PAM2Model.FK_SuppressionSettings_User1" FromRole="User" ToRole="SuppressionSetting" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_User_User" FromRole="User" ToRole="User1" />
+    <NavigationProperty Name="User2" Relationship="PAM2Model.FK_User_User" FromRole="User1" ToRole="User" />
+    <NavigationProperty Name="User11" Relationship="PAM2Model.FK_User_User1" FromRole="User" ToRole="User1" />
+    <NavigationProperty Name="User3" Relationship="PAM2Model.FK_User_User1" FromRole="User1" ToRole="User" />
+    <NavigationProperty Name="UserRoles" Relationship="PAM2Model.FK_UserRole_User" FromRole="User" ToRole="UserRole" />
+    <NavigationProperty Name="AutoPromoteAndFillLogDetails" Relationship="PAM2Model.FK_AutoPromoteAndFill_User" FromRole="User" ToRole="AutoPromoteAndFillLogDetail" />
+    <NavigationProperty Name="SessionThresholdSettings" Relationship="PAM2Model.FK_SessionThresholdSetting_User" FromRole="User" ToRole="SessionThresholdSetting" />
+    <NavigationProperty Name="SessionThresholdSettings1" Relationship="PAM2Model.FK_SessionThresholdSetting_User1" FromRole="User" ToRole="SessionThresholdSetting" />
+    <NavigationProperty Name="AttributeSettings" Relationship="PAM2Model.FK_AttributeSetting_User" FromRole="User" ToRole="AttributeSetting" />
+    <NavigationProperty Name="AttributeSettings1" Relationship="PAM2Model.FK_AttributeSetting_User1" FromRole="User" ToRole="AttributeSetting" />
+    <NavigationProperty Name="Sessions" Relationship="PAM2Model.FK_Session_User" FromRole="User" ToRole="Session" />
+    <NavigationProperty Name="Sessions1" Relationship="PAM2Model.FK_Session_User1" FromRole="User" ToRole="Session" />
+    <NavigationProperty Name="SessionResults" Relationship="PAM2Model.FK_SessionResult_User" FromRole="User" ToRole="SessionResult" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Type="Guid" Name="UserRoleId" Nullable="false" />
+    <Property Type="Guid" Name="UserId" Nullable="false" />
+    <Property Type="Guid" Name="RoleId" Nullable="false" />
+    <NavigationProperty Name="Role" Relationship="PAM2Model.FK_UserRole_Role" FromRole="UserRole" ToRole="Role" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_UserRole_User" FromRole="UserRole" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_AutoMergeLogDetails_AutoMergeLogDetails">
+    <End Type="PAM2Model.AutoMergeLogDetail" Role="AutoMergeLogDetail" Multiplicity="1" />
+    <End Type="PAM2Model.AutoMergeLogDetail" Role="AutoMergeLogDetail1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AutoMergeLogDetail">
+        <PropertyRef Name="AutoMergeLogId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetail1">
+        <PropertyRef Name="AutoMergeLogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.AutoMergeLogDetail" Role="AutoMergeLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetail">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.AutoMergeLogDetail" Role="AutoMergeLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetail">
+        <PropertyRef Name="LoggedInUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityAutoMergeRule_AutoMergeRuleMaster">
+    <End Type="PAM2Model.AutoMergeRuleMaster" Role="AutoMergeRuleMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.EntityAutoMergeRule" Role="EntityAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AutoMergeRuleMaster">
+        <PropertyRef Name="AutoMergeRuleId" />
+      </Principal>
+      <Dependent Role="EntityAutoMergeRule">
+        <PropertyRef Name="AutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryDetail_CategoryMaster">
+    <End Type="PAM2Model.CategoryMaster" Role="CategoryMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.CategoryDetail" Role="CategoryDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="CategoryDetail">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityAutoMergeRule_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="0..1" />
+    <End Type="PAM2Model.EntityAutoMergeRule" Role="EntityAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="EntityAutoMergeRule">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_EntityAutoMergeRule">
+    <End Type="PAM2Model.EntityAutoMergeRule" Role="EntityAutoMergeRule" Multiplicity="1" />
+    <End Type="PAM2Model.SessionAutoMergeRule" Role="SessionAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityAutoMergeRule">
+        <PropertyRef Name="EntityRuleId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule">
+        <PropertyRef Name="EntityAutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.MatchAttributeSetting" Role="MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.SuppressionHstory" Role="SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRule_MatchRuleMaster">
+    <End Type="PAM2Model.MatchRuleMaster" Role="MatchRuleMaster" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PAM2Model.GroupRule" Role="GroupRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleMaster">
+        <PropertyRef Name="MatchRuleId" />
+      </Principal>
+      <Dependent Role="GroupRule">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRuleDetail_GroupRule">
+    <End Type="PAM2Model.GroupRule" Role="GroupRule" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PAM2Model.GroupRuleDetail" Role="GroupRuleDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupRule">
+        <PropertyRef Name="GroupRuleId" />
+      </Principal>
+      <Dependent Role="GroupRuleDetail">
+        <PropertyRef Name="GroupRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InactiveRecordSettings_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.InactiveRecordSetting" Role="InactiveRecordSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InactiveRecordSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InactiveRecordSettings_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.InactiveRecordSetting" Role="InactiveRecordSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InactiveRecordSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_MatchGroup">
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchAttributeSetting" Role="MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="MatchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchAttributeSetting" Role="MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchAttributeSetting" Role="MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_MatchKeyMaster">
+    <End Type="PAM2Model.MatchKeyMaster" Role="MatchKeyMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_PriorityMaster">
+    <End Type="PAM2Model.PriorityMaster" Role="PriorityMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriorityMaster">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_MatchGroup">
+    <End Type="PAM2Model.MatchGroup" Role="MatchGroup" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionGroup" Role="SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroupMaster_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroupMaster" Role="MatchGroupMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroupMaster">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroupMaster_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchGroupMaster" Role="MatchGroupMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroupMaster">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_MatchKeyMaster">
+    <End Type="PAM2Model.MatchKeyMaster" Role="MatchKeyMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionGroup" Role="SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchRuleDropDownDetail_MatchRuleDropDown">
+    <End Type="PAM2Model.MatchRuleDropDown" Role="MatchRuleDropDown" Multiplicity="1" />
+    <End Type="PAM2Model.MatchRuleDropDownDetail" Role="MatchRuleDropDownDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleDropDown">
+        <PropertyRef Name="DropDownId" />
+      </Principal>
+      <Dependent Role="MatchRuleDropDownDetail">
+        <PropertyRef Name="DropDownId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail">
+    <End Type="PAM2Model.MatchRuleDropDownDetail" Role="MatchRuleDropDownDetail" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchRuleDropDownDetail" Role="MatchRuleDropDownDetail1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleDropDownDetail">
+        <PropertyRef Name="DropDownDetailId" />
+      </Principal>
+      <Dependent Role="MatchRuleDropDownDetail1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_PriorityMaster">
+    <End Type="PAM2Model.PriorityMaster" Role="PriorityMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionGroup" Role="SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriorityMaster">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Type="PAM2Model.Role" Role="Role" Multiplicity="1" />
+    <End Type="PAM2Model.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_Section">
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="1" />
+    <End Type="PAM2Model.SessionSection" Role="SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_SessionAutoMergeRule">
+    <End Type="PAM2Model.SessionAutoMergeRule" Role="SessionAutoMergeRule" Multiplicity="1" />
+    <End Type="PAM2Model.SessionAutoMergeRule" Role="SessionAutoMergeRule1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SessionAutoMergeRule">
+        <PropertyRef Name="SessionAutoMergeRuleId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule1">
+        <PropertyRef Name="SessionAutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionGroup" Role="SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionSection" Role="SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionSection" Role="SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SmartMergeConfigurationSetting_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SmartMergeConfigurationSetting" Role="SmartMergeConfigurationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SmartMergeConfigurationSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SmartMergeConfigurationSetting_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SmartMergeConfigurationSetting" Role="SmartMergeConfigurationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SmartMergeConfigurationSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_Status">
+    <End Type="PAM2Model.Status" Role="Status" Multiplicity="1" />
+    <End Type="PAM2Model.SuppressionHstory" Role="SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="ReviewStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="1" />
+    <End Type="PAM2Model.SuppressionHstory" Role="SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="ReviewedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SuppressionHstory" Role="SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionSettings_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SuppressionSetting" Role="SuppressionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionSettings_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SuppressionSetting" Role="SuppressionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.User" Role="User1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.User" Role="User1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="1" />
+    <End Type="PAM2Model.UserRole" Role="UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="NoOfGroupsPerSessionUsage">
+    <Key>
+      <PropertyRef Name="SessionId" />
+      <PropertyRef Name="PackageId" />
+    </Key>
+    <Property Type="Guid" Name="SessionId" Nullable="false" />
+    <Property Type="Guid" Name="PackageId" Nullable="false" />
+    <Property Type="Int32" Name="UsedValue" />
+  </EntityType>
+  <EntityType Name="NoOfSessionsPerEntityUsage">
+    <Key>
+      <PropertyRef Name="PackageId" />
+      <PropertyRef Name="EntitySettingId" />
+    </Key>
+    <Property Type="Guid" Name="PackageId" Nullable="false" />
+    <Property Type="Guid" Name="EntitySettingId" Nullable="false" />
+    <Property Type="Int32" Name="UsedValue" />
+  </EntityType>
+  <EntityType Name="NoOfGroupsPerSessionUsageHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Guid" Nullable="false" />
+    <Property Name="SessionId" Type="Guid" Nullable="false" />
+    <Property Name="PackageId" Type="Guid" Nullable="false" />
+    <Property Name="UsedValue" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="OperationType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NoOfSessionsPerEntityUsageHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="Guid" Nullable="false" />
+    <Property Name="PackageId" Type="Guid" Nullable="false" />
+    <Property Name="EntitySettingId" Type="Guid" Nullable="false" />
+    <Property Name="UsedValue" Type="Int32" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="OperationType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StatusReasonSetting">
+    <Key>
+      <PropertyRef Name="StatusReasonSettingsId" />
+    </Key>
+    <Property Name="StatusReasonSettingsId" Type="Guid" Nullable="false" />
+    <Property Name="EntitySettingId" Type="Guid" />
+    <Property Name="StatusReasonFieldSchema" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="StatusReasonFieldDisplay" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BestRecordDetectionRule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RuleEnum" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="Boolean" />
+    <Property Name="Contact" Type="Boolean" />
+    <Property Name="Lead" Type="Boolean" />
+    <NavigationProperty Name="BestRecordDetectionSettings" Relationship="PAM2Model.FK_BestRecordDetectionSettings_BestRecordDetectionRules" FromRole="BestRecordDetectionRule" ToRole="BestRecordDetectionSetting" />
+    <NavigationProperty Name="BestRecordRuleParameters" Relationship="PAM2Model.FK_BestRecordRuleParameters_BestRecordDetectionRules" FromRole="BestRecordDetectionRule" ToRole="BestRecordRuleParameter" />
+  </EntityType>
+  <EntityType Name="BestRecordRuleParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleId" Type="Guid" />
+    <Property Name="ParameterId" Type="Guid" />
+    <NavigationProperty Name="BestRecordRuleParametersMaster" Relationship="PAM2Model.FK_BestRecordRuleParameters_BestRecordRuleParametersMaster" FromRole="BestRecordRuleParameter" ToRole="BestRecordRuleParametersMaster" />
+    <NavigationProperty Name="BestRecordDetectionRule" Relationship="PAM2Model.FK_BestRecordRuleParameters_BestRecordDetectionRules" FromRole="BestRecordRuleParameter" ToRole="BestRecordDetectionRule" />
+  </EntityType>
+  <EntityType Name="BestRecordRuleParametersMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Parameter" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ParameterEnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BestRecordRuleParameters" Relationship="PAM2Model.FK_BestRecordRuleParameters_BestRecordRuleParametersMaster" FromRole="BestRecordRuleParametersMaster" ToRole="BestRecordRuleParameter" />
+    <NavigationProperty Name="BestRecordDetectionSettings" Relationship="PAM2Model.FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster" FromRole="BestRecordRuleParametersMaster" ToRole="BestRecordDetectionSetting" />
+  </EntityType>
+  <Association Name="FK_BestRecordRuleParameters_BestRecordRuleParametersMaster">
+    <End Type="PAM2Model.BestRecordRuleParametersMaster" Role="BestRecordRuleParametersMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestRecordRuleParameter" Role="BestRecordRuleParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordRuleParameter">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestRecordDetectionSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleId" Type="Guid" />
+    <Property Name="RuleParamId" Type="Guid" />
+    <Property Name="OrderOfRules" Type="Int32" />
+    <Property Name="IsMaster" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <NavigationProperty Name="BestRecordDetectionRule" Relationship="PAM2Model.FK_BestRecordDetectionSettings_BestRecordDetectionRules" FromRole="BestRecordDetectionSetting" ToRole="BestRecordDetectionRule" />
+    <NavigationProperty Name="BestRecordRuleParametersMaster" Relationship="PAM2Model.FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster" FromRole="BestRecordDetectionSetting" ToRole="BestRecordRuleParametersMaster" />
+    <NavigationProperty Name="SessionBestRecordSettings" Relationship="PAM2Model.FK_SessionBestRecordSettings_BestRecordDetectionSettings" FromRole="BestRecordDetectionSetting" ToRole="SessionBestRecordSetting" />
+  </EntityType>
+  <EntityType Name="SessionBestRecordSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="SessionId" Type="Guid" />
+    <Property Name="BestRecordDetectionSettingsId" Type="Guid" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="BestRecordDetectionSetting" Relationship="PAM2Model.FK_SessionBestRecordSettings_BestRecordDetectionSettings" FromRole="SessionBestRecordSetting" ToRole="BestRecordDetectionSetting" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionBestRecordSettings_Session" FromRole="SessionBestRecordSetting" ToRole="Session" />
+  </EntityType>
+  <Association Name="FK_BestRecordDetectionSettings_BestRecordDetectionRules">
+    <End Type="PAM2Model.BestRecordDetectionRule" Role="BestRecordDetectionRule" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestRecordDetectionSetting" Role="BestRecordDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionRule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordDetectionSetting">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster">
+    <End Type="PAM2Model.BestRecordRuleParametersMaster" Role="BestRecordRuleParametersMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestRecordDetectionSetting" Role="BestRecordDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordDetectionSetting">
+        <PropertyRef Name="RuleParamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionBestRecordSettings_BestRecordDetectionSettings">
+    <End Type="PAM2Model.BestRecordDetectionSetting" Role="BestRecordDetectionSetting" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionBestRecordSetting" Role="SessionBestRecordSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionSetting">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SessionBestRecordSetting">
+        <PropertyRef Name="BestRecordDetectionSettingsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestFieldDetRuleParameter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleId" Type="Guid" />
+    <Property Name="ParameterId" Type="Guid" />
+    <NavigationProperty Name="BestFieldsDetRuleParametersMaster" Relationship="PAM2Model.FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster" FromRole="BestFieldDetRuleParameter" ToRole="BestFieldsDetRuleParametersMaster" />
+    <NavigationProperty Name="BestFieldDetectionRule" Relationship="PAM2Model.FK_BestFieldDetRuleParameters_BestRecordDetectionRules" FromRole="BestFieldDetRuleParameter" ToRole="BestFieldDetectionRule" />
+  </EntityType>
+  <EntityType Name="BestFieldsDetRuleParametersMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Parameter" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ParameterEnum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BestFieldDetRuleParameters" Relationship="PAM2Model.FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster" FromRole="BestFieldsDetRuleParametersMaster" ToRole="BestFieldDetRuleParameter" />
+    <NavigationProperty Name="BestFieldDetectionSettings" Relationship="PAM2Model.FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster" FromRole="BestFieldsDetRuleParametersMaster" ToRole="BestFieldDetectionSetting" />
+  </EntityType>
+  <Association Name="FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster">
+    <End Type="PAM2Model.BestFieldsDetRuleParametersMaster" Role="BestFieldsDetRuleParametersMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetRuleParameter" Role="BestFieldDetRuleParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldsDetRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetRuleParameter">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestFieldDetectionRuleType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RuleTypeEnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="Boolean" />
+    <Property Name="Contact" Type="Boolean" />
+    <Property Name="Lead" Type="Boolean" />
+    <NavigationProperty Name="BestFieldDetectionRules" Relationship="PAM2Model.FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes" FromRole="BestFieldDetectionRuleType" ToRole="BestFieldDetectionRule" />
+  </EntityType>
+  <EntityType Name="AutoPromoteAndFillLogDetail">
+    <Key>
+      <PropertyRef Name="AutoPromoteAndFillID" />
+    </Key>
+    <Property Name="AutoPromoteAndFillID" Type="Guid" Nullable="false" />
+    <Property Name="EntitySettingId" Type="Guid" Nullable="false" />
+    <Property Name="SessionId" Type="Guid" Nullable="false" />
+    <Property Name="StartDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EndDateTime" Type="DateTime" Precision="3" />
+    <Property Name="Process" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RecordsProcessed" Type="Int32" />
+    <Property Name="LoggedInUser" Type="Guid" />
+    <Property Name="GroupNo" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_AutoPromoteAndFill_EntitySetting" FromRole="AutoPromoteAndFillLogDetail" ToRole="EntitySetting" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_AutoPromoteAndFill_User" FromRole="AutoPromoteAndFillLogDetail" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_AutoPromoteAndFill_Session" FromRole="AutoPromoteAndFillLogDetail" ToRole="Session" />
+  </EntityType>
+  <Association Name="FK_AutoPromoteAndFill_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.AutoPromoteAndFillLogDetail" Role="AutoPromoteAndFillLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetail">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoPromoteAndFill_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.AutoPromoteAndFillLogDetail" Role="AutoPromoteAndFillLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetail">
+        <PropertyRef Name="LoggedInUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestFieldDetectionRule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="BestFieldDetectionRuleTypesId" Type="Guid" />
+    <Property Name="RuleName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RuleEnum" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BestFieldDetectionRuleType" Relationship="PAM2Model.FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes" FromRole="BestFieldDetectionRule" ToRole="BestFieldDetectionRuleType" />
+    <NavigationProperty Name="BestFieldDetRuleParameters" Relationship="PAM2Model.FK_BestFieldDetRuleParameters_BestRecordDetectionRules" FromRole="BestFieldDetectionRule" ToRole="BestFieldDetRuleParameter" />
+    <NavigationProperty Name="BestFieldDetectionSettings" Relationship="PAM2Model.FK_BestFieldDetectionSettings_BestFieldDetectionRules" FromRole="BestFieldDetectionRule" ToRole="BestFieldDetectionSetting" />
+  </EntityType>
+  <Association Name="FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes">
+    <End Type="PAM2Model.BestFieldDetectionRuleType" Role="BestFieldDetectionRuleType" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetectionRule" Role="BestFieldDetectionRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRuleType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionRule">
+        <PropertyRef Name="BestFieldDetectionRuleTypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetRuleParameters_BestRecordDetectionRules">
+    <End Type="PAM2Model.BestFieldDetectionRule" Role="BestFieldDetectionRule" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetRuleParameter" Role="BestFieldDetRuleParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetRuleParameter">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordRuleParameters_BestRecordDetectionRules">
+    <End Type="PAM2Model.BestRecordDetectionRule" Role="BestRecordDetectionRule" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestRecordRuleParameter" Role="BestRecordRuleParameter" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionRule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordRuleParameter">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SessionThresholdSetting">
+    <Key>
+      <PropertyRef Name="SessionThresholdId" />
+    </Key>
+    <Property Name="SessionThresholdId" Type="Guid" Nullable="false" />
+    <Property Name="SessionId" Type="Guid" Nullable="false" />
+    <Property Name="Threshold1" Type="Int32" Nullable="false" />
+    <Property Name="Threshold2" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Guid" />
+    <Property Name="IncludeOriginal" Type="Boolean" />
+    <Property Name="TreatAccountNulls" Type="Boolean" />
+    <Property Name="TreatNulls" Type="Boolean" />
+    <Property Name="MatchKeyID" Type="Guid" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ViewType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ViewName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FetchXML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ValueToNull" Type="Boolean" />
+    <NavigationProperty Name="LanguageMaster" Relationship="PAM2Model.FK_SessionThresholdSetting_LanguageMaster" FromRole="SessionThresholdSetting" ToRole="LanguageMaster" />
+    <NavigationProperty Name="MatchKeyMaster" Relationship="PAM2Model.FK_SessionThresholdSetting_SessionThresholdSetting" FromRole="SessionThresholdSetting" ToRole="MatchKeyMaster" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SessionThresholdSetting_User" FromRole="SessionThresholdSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_SessionThresholdSetting_User1" FromRole="SessionThresholdSetting" ToRole="User" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionThresholdSetting_Session" FromRole="SessionThresholdSetting" ToRole="Session" />
+  </EntityType>
+  <Association Name="FK_SessionThresholdSetting_LanguageMaster">
+    <End Type="PAM2Model.LanguageMaster" Role="LanguageMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionThresholdSetting" Role="SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LanguageMaster">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_SessionThresholdSetting">
+    <End Type="PAM2Model.MatchKeyMaster" Role="MatchKeyMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionThresholdSetting" Role="SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionThresholdSetting" Role="SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionThresholdSetting" Role="SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AttributeSetting">
+    <Key>
+      <PropertyRef Name="AttributeSettingId" />
+    </Key>
+    <Property Name="AttributeSettingId" Type="Guid" Nullable="false" />
+    <Property Name="EntitySettingId" Type="Guid" Nullable="false" />
+    <Property Name="SchemaName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CustomName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SectionId" Type="Guid" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="IsVisible" Type="Boolean" />
+    <Property Name="SessionId" Type="Guid" />
+    <Property Name="ExcludeUpdate" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdateBy" Type="Guid" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="0" />
+    <Property Name="UseForAutoMerge" Type="Boolean" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_AttributeSetting_EntitySetting" FromRole="AttributeSetting" ToRole="EntitySetting" />
+    <NavigationProperty Name="Section" Relationship="PAM2Model.FK_AttributeSetting_Section" FromRole="AttributeSetting" ToRole="Section" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_AttributeSetting_User" FromRole="AttributeSetting" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_AttributeSetting_User1" FromRole="AttributeSetting" ToRole="User" />
+    <NavigationProperty Name="BestFieldDetectionSettings" Relationship="PAM2Model.FK_BestFieldDetectionSettings_AttributeSetting" FromRole="AttributeSetting" ToRole="BestFieldDetectionSetting" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_AttributeSetting_Session" FromRole="AttributeSetting" ToRole="Session" />
+  </EntityType>
+  <Association Name="FK_AttributeSetting_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_Section">
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="0..1" />
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BestFieldDetectionSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="RuleId" Type="Guid" />
+    <Property Name="RuleParamId" Type="Guid" />
+    <Property Name="OrderOfRules" Type="Int32" />
+    <Property Name="IsMaster" Type="Boolean" />
+    <Property Name="AttributeSettingId" Type="Guid" />
+    <Property Name="SectionId" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <NavigationProperty Name="AttributeSetting" Relationship="PAM2Model.FK_BestFieldDetectionSettings_AttributeSetting" FromRole="BestFieldDetectionSetting" ToRole="AttributeSetting" />
+    <NavigationProperty Name="BestFieldDetectionRule" Relationship="PAM2Model.FK_BestFieldDetectionSettings_BestFieldDetectionRules" FromRole="BestFieldDetectionSetting" ToRole="BestFieldDetectionRule" />
+    <NavigationProperty Name="BestFieldsDetRuleParametersMaster" Relationship="PAM2Model.FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster" FromRole="BestFieldDetectionSetting" ToRole="BestFieldsDetRuleParametersMaster" />
+    <NavigationProperty Name="Section" Relationship="PAM2Model.FK_BestFieldDetectionSettings_Section" FromRole="BestFieldDetectionSetting" ToRole="Section" />
+    <NavigationProperty Name="BestFieldDetPicklistFieldDetails" Relationship="PAM2Model.FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings" FromRole="BestFieldDetectionSetting" ToRole="BestFieldDetPicklistFieldDetail" />
+  </EntityType>
+  <EntityType Name="BestFieldDetPicklistFieldDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="BestFieldDetectionSettingsId" Type="Guid" />
+    <Property Name="Label" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Order" Type="Int32" />
+    <NavigationProperty Name="BestFieldDetectionSetting" Relationship="PAM2Model.FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings" FromRole="BestFieldDetPicklistFieldDetail" ToRole="BestFieldDetectionSetting" />
+  </EntityType>
+  <Association Name="FK_BestFieldDetectionSettings_AttributeSetting">
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetectionSetting" Role="BestFieldDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeSetting">
+        <PropertyRef Name="AttributeSettingId" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSetting">
+        <PropertyRef Name="AttributeSettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_BestFieldDetectionRules">
+    <End Type="PAM2Model.BestFieldDetectionRule" Role="BestFieldDetectionRule" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetectionSetting" Role="BestFieldDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSetting">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster">
+    <End Type="PAM2Model.BestFieldsDetRuleParametersMaster" Role="BestFieldsDetRuleParametersMaster" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetectionSetting" Role="BestFieldDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldsDetRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSetting">
+        <PropertyRef Name="RuleParamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_Section">
+    <End Type="PAM2Model.Section" Role="Section" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetectionSetting" Role="BestFieldDetectionSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSetting">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings">
+    <End Type="PAM2Model.BestFieldDetectionSetting" Role="BestFieldDetectionSetting" Multiplicity="0..1" />
+    <End Type="PAM2Model.BestFieldDetPicklistFieldDetail" Role="BestFieldDetPicklistFieldDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionSetting">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetPicklistFieldDetail">
+        <PropertyRef Name="BestFieldDetectionSettingsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="Guid" Nullable="false" />
+    <Property Name="SessionName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="EntitySettingId" Type="Guid" Nullable="false" />
+    <Property Name="RefreshDate" Type="DateTime" Precision="3" />
+    <Property Name="GroupCount" Type="Int32" />
+    <Property Name="MergeStatus" Type="Guid" />
+    <Property Name="IsAutoMergeInProgress" Type="Boolean" />
+    <Property Name="IsDeactivated" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreatedBy" Type="Guid" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Guid" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="OutputFilePath" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ExecutedBy" Type="Guid" />
+    <Property Name="ExecutedOn" Type="DateTime" Precision="3" />
+    <Property Name="ExecutionEnd" Type="DateTime" Precision="3" />
+    <Property Name="IsAutoPromoteInProgress" Type="Boolean" />
+    <Property Name="IsAutoFillInProgress" Type="Boolean" />
+    <Property Name="IsAutoFillAndPromoteInProgress" Type="Boolean" />
+    <Property Name="IsAutoPromotedAll" Type="Boolean" />
+    <Property Name="IsAutoFillAll" Type="Boolean" />
+    <Property Name="IsAutoPromoteFillAll" Type="Boolean" />
+    <NavigationProperty Name="AttributeSettings" Relationship="PAM2Model.FK_AttributeSetting_Session" FromRole="Session" ToRole="AttributeSetting" />
+    <NavigationProperty Name="AutoMergeLogDetails" Relationship="PAM2Model.FK_AutoMergeLogDetails_Session" FromRole="Session" ToRole="AutoMergeLogDetail" />
+    <NavigationProperty Name="AutoPromoteAndFillLogDetails" Relationship="PAM2Model.FK_AutoPromoteAndFill_Session" FromRole="Session" ToRole="AutoPromoteAndFillLogDetail" />
+    <NavigationProperty Name="EntitySetting" Relationship="PAM2Model.FK_Session_EntitySetting" FromRole="Session" ToRole="EntitySetting" />
+    <NavigationProperty Name="MatchAttributeSettings" Relationship="PAM2Model.FK_MatchAttributeSetting_Session" FromRole="Session" ToRole="MatchAttributeSetting" />
+    <NavigationProperty Name="Session1" Relationship="PAM2Model.FK_Session_Session" FromRole="Session" ToRole="Session1" />
+    <NavigationProperty Name="Session2" Relationship="PAM2Model.FK_Session_Session" FromRole="Session1" ToRole="Session" />
+    <NavigationProperty Name="Status" Relationship="PAM2Model.FK_Session_Status" FromRole="Session" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_Session_User" FromRole="Session" ToRole="User" />
+    <NavigationProperty Name="User1" Relationship="PAM2Model.FK_Session_User1" FromRole="Session" ToRole="User" />
+    <NavigationProperty Name="SessionAutoMergeRules" Relationship="PAM2Model.FK_SessionAutoMergeRule_Session" FromRole="Session" ToRole="SessionAutoMergeRule" />
+    <NavigationProperty Name="SessionBestRecordSettings" Relationship="PAM2Model.FK_SessionBestRecordSettings_Session" FromRole="Session" ToRole="SessionBestRecordSetting" />
+    <NavigationProperty Name="SessionGroups" Relationship="PAM2Model.FK_SessionGroup_Session" FromRole="Session" ToRole="SessionGroup" />
+    <NavigationProperty Name="SessionMatchDetails" Relationship="PAM2Model.FK_SessionMatchDetail_Session" FromRole="Session" ToRole="SessionMatchDetail" />
+    <NavigationProperty Name="SessionResults" Relationship="PAM2Model.FK_SessionResult_Session" FromRole="Session" ToRole="SessionResult" />
+    <NavigationProperty Name="SessionSections" Relationship="PAM2Model.FK_SessionSection_Session" FromRole="Session" ToRole="SessionSection" />
+    <NavigationProperty Name="SessionThresholdSettings" Relationship="PAM2Model.FK_SessionThresholdSetting_Session" FromRole="Session" ToRole="SessionThresholdSetting" />
+  </EntityType>
+  <EntityType Name="SessionResult">
+    <Key>
+      <PropertyRef Name="SessionResultId" />
+    </Key>
+    <Property Name="SessionResultId" Type="Guid" Nullable="false" />
+    <Property Name="SessionId" Type="Guid" Nullable="false" />
+    <Property Name="RecordId" Type="Guid" Nullable="false" />
+    <Property Name="ValidGroup" Type="Boolean" />
+    <Property Name="GroupNo" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="GroupRank" Type="Int32" />
+    <Property Name="MatchScore" Type="Int32" />
+    <Property Name="PunchIn" Type="DateTime" Precision="3" />
+    <Property Name="PunchOut" Type="DateTime" Precision="3" />
+    <Property Name="ReviewStatus" Type="Guid" />
+    <Property Name="Reviewer" Type="Guid" />
+    <Property Name="CurentStatusDateTime" Type="DateTime" Precision="3" />
+    <Property Name="EntityHeaderFieldValue" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="IsPrimary" Type="Boolean" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UserNotes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="AutoPromote" Type="Boolean" />
+    <Property Name="AutoFill" Type="Boolean" />
+    <Property Name="AutoPromoteFill" Type="Boolean" />
+    <NavigationProperty Name="Session" Relationship="PAM2Model.FK_SessionResult_Session" FromRole="SessionResult" ToRole="Session" />
+    <NavigationProperty Name="Status1" Relationship="PAM2Model.FK_SessionResult_Status" FromRole="SessionResult" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="PAM2Model.FK_SessionResult_User" FromRole="SessionResult" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_AttributeSetting_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="0..1" />
+    <End Type="PAM2Model.AttributeSetting" Role="AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.AutoMergeLogDetail" Role="AutoMergeLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetail">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoPromoteAndFill_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.AutoPromoteAndFillLogDetail" Role="AutoPromoteAndFillLogDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetail">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_EntitySetting">
+    <End Type="PAM2Model.EntitySetting" Role="EntitySetting" Multiplicity="1" />
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="0..1" />
+    <End Type="PAM2Model.MatchAttributeSetting" Role="MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.Session" Role="Session1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="Session1">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Status">
+    <End Type="PAM2Model.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="MergeStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_User1">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionAutoMergeRule" Role="SessionAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionBestRecordSettings_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionBestRecordSetting" Role="SessionBestRecordSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionBestRecordSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionGroup" Role="SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionMatchDetail_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionMatchDetail" Role="SessionMatchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionMatchDetail">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionResult" Role="SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionSection" Role="SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_Session">
+    <End Type="PAM2Model.Session" Role="Session" Multiplicity="1" />
+    <End Type="PAM2Model.SessionThresholdSetting" Role="SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_Status">
+    <End Type="PAM2Model.Status" Role="Status" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionResult" Role="SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="ReviewStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_User">
+    <End Type="PAM2Model.User" Role="User" Multiplicity="0..1" />
+    <End Type="PAM2Model.SessionResult" Role="SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="Reviewer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

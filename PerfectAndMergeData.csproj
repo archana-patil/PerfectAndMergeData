@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3FB3F7B-2BF6-4082-8A32-D137D10D0A1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PerfectAndMergeData</RootNamespace>
+    <AssemblyName>PerfectAndMergeData</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PerfectAndMergeData.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PerfectAndMergeWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PerfectAndMergeWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttributeSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoMergeLogDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoMergeRuleMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutoPromoteAndFillLogDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldDetectionRule.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldDetectionRuleType.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldDetectionSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldDetPicklistFieldDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldDetRuleParameter.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestFieldsDetRuleParametersMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestRecordDetectionRule.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestRecordDetectionSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestRecordRuleParameter.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BestRecordRuleParametersMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataEnums.cs" />
+    <Compile Include="Common\TimeExtensions.cs" />
+    <Compile Include="DTO\AttributeSettingResultSet.cs" />
+    <Compile Include="DTO\CTLCategoriesListResultSet.cs" />
+    <Compile Include="DTO\CTLCategory.cs" />
+    <Compile Include="DTO\CTLCategoryDetail.cs" />
+    <Compile Include="DTO\CTLCategoryDetailListResultSet.cs" />
+    <Compile Include="DTO\EntityRecord.cs" />
+    <Compile Include="DTO\HierarchyOfPickListFields.cs" />
+    <Compile Include="DTO\HierarchyOfPickListFieldsResultSet.cs" />
+    <Compile Include="DTO\PAMSectionAttributeSettingResultSet.cs" />
+    <Compile Include="DTO\MSCRMViewsListResultSet.cs" />
+    <Compile Include="DTO\MSCRMView.cs" />
+    <Compile Include="DTO\PAMBestFieldGroupMasterResult.cs" />
+    <Compile Include="DTO\PAMBestFieldGroupMaster.cs" />
+    <Compile Include="DTO\PAMBestFieldDetectionSettings.cs" />
+    <Compile Include="DTO\PAMBestFieldDetectionSettingsResult.cs" />
+    <Compile Include="DTO\PAMBestFieldRuleParametersMaster.cs" />
+    <Compile Include="DTO\PAMBestFieldRuleParametersMasterResult.cs" />
+    <Compile Include="DTO\PAMBestField_PicklistAttributeResultSet.cs" />
+    <Compile Include="DTO\PAMBestField_PicklistAttribute.cs" />
+    <Compile Include="DTO\PAMBestField_FieldGroupsDetailResultSet.cs" />
+    <Compile Include="DTO\PAMBestField_FieldGroupsDetail.cs" />
+    <Compile Include="DTO\PAMBestRecordRuleParametersMasterResult.cs" />
+    <Compile Include="DTO\PAMBestRecordRuleParametersMaster.cs" />
+    <Compile Include="DTO\PAMBestRecordDetectionSettingsResult.cs" />
+    <Compile Include="DTO\PAMBestRecordDetectionSettings.cs" />
+    <Compile Include="DTO\PAMBestRecordDetectionRules.cs" />
+    <Compile Include="DTO\PAMSectionAttributeSetting.cs" />
+    <Compile Include="DTO\PAMStatusReasonSettings.cs" />
+    <Compile Include="DTO\PAMBestRecordDetectionRulesResult.cs" />
+    <Compile Include="DTO\PAMStatusReasonSettingsResult.cs" />
+    <Compile Include="DTO\PickListScore.cs" />
+    <Compile Include="DTO\TimeZoneList.cs" />
+    <Compile Include="DTO\TimeZone.cs" />
+    <Compile Include="DTO\PAMThemeResultSet.cs" />
+    <Compile Include="DTO\PAMTheme.cs" />
+    <Compile Include="DTO\PamMatchGroup.cs" />
+    <Compile Include="DTO\PAMMatchKeys.cs" />
+    <Compile Include="DTO\PAMMatchKeyResultSet.cs" />
+    <Compile Include="DTO\CRMUserResultSet.cs" />
+    <Compile Include="DTO\EntityAutoMergeRuleResultSet.cs" />
+    <Compile Include="DTO\EntitySetting.cs" />
+    <Compile Include="DTO\EntitySettingResultSet.cs" />
+    <Compile Include="DTO\PAM1Attribute.cs" />
+    <Compile Include="DTO\PAMGroupRule.cs" />
+    <Compile Include="DTO\PAMGroupRuleResultSet.cs" />
+    <Compile Include="DTO\MatchGroup.cs" />
+    <Compile Include="DTO\MatchGroupAttributeSettingResultSet.cs" />
+    <Compile Include="DTO\MatchGroupListResultSet.cs" />
+    <Compile Include="DTO\PAMLanguage.cs" />
+    <Compile Include="DTO\PAMLanguageResultSet.cs" />
+    <Compile Include="DTO\PAMMatchRule.cs" />
+    <Compile Include="DTO\PAMMatchRuleListResultSet.cs" />
+    <Compile Include="DTO\PAMAttributeSetting.cs" />
+    <Compile Include="DTO\PAMCRMUser.cs" />
+    <Compile Include="DTO\PAMMatchGroupAttributeSetting.cs" />
+    <Compile Include="DTO\PAMPriority.cs" />
+    <Compile Include="DTO\PAMSessionAutoMergeRule.cs" />
+    <Compile Include="DTO\PAMSessionResult.cs" />
+    <Compile Include="DTO\PAMSessionResultSet.cs" />
+    <Compile Include="DTO\PAMSessionThresholdSetting.cs" />
+    <Compile Include="DTO\PAMSessionThresholdSettingResultSet.cs" />
+    <Compile Include="DTO\PAMSmartMergeConfigurationSetting.cs" />
+    <Compile Include="DTO\PriorityResultSet.cs" />
+    <Compile Include="DTO\ResultSet.cs" />
+    <Compile Include="DTO\PAMRuleDropDownDetail.cs" />
+    <Compile Include="DTO\PAMRuleDropDownDetailResultSet.cs" />
+    <Compile Include="DTO\Session.cs" />
+    <Compile Include="DTO\SessionListResultSet.cs" />
+    <Compile Include="DTO\PAMUser.cs" />
+    <Compile Include="DTO\SessionMatchGroupAttributeSetting.cs" />
+    <Compile Include="DTO\SessionMatchGroupAttributeSettingResultSet.cs" />
+    <Compile Include="DTO\SmartMergeConfigurationSettingResultSet.cs" />
+    <Compile Include="DTO\UserResultSet.cs" />
+    <Compile Include="DTO\ValidOrgAndUserResultSet.cs" />
+    <Compile Include="EntityAutoMergeRule.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntitySetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\AttributeSetting.cs" />
+    <Compile Include="Entity\AutoMergeLogDetail.cs" />
+    <Compile Include="Entity\EntityAutoMergeRule.cs" />
+    <Compile Include="Entity\GroupRule.cs" />
+    <Compile Include="Entity\InactiveRecordSettings.cs" />
+    <Compile Include="Entity\MatchAttributeSetting.cs" />
+    <Compile Include="Entity\MatchGroup.cs" />
+    <Compile Include="Entity\MatchGroupMaster.cs" />
+    <Compile Include="Entity\MenoFieldConfiguration.cs" />
+    <Compile Include="Entity\Section.cs" />
+    <Compile Include="Entity\SessionAutoMergeRule.cs" />
+    <Compile Include="Entity\SessionGroup.cs" />
+    <Compile Include="Entity\SessionMatchDetail.cs" />
+    <Compile Include="Entity\SessionSection.cs" />
+    <Compile Include="Entity\SessionThresholdSetting.cs" />
+    <Compile Include="Entity\SmartMergeConfigurationSetting.cs" />
+    <Compile Include="Entity\SuppressionHistory.cs" />
+    <Compile Include="Entity\SuppressionSetting.cs" />
+    <Compile Include="Entity\User.cs" />
+    <Compile Include="Entity\UserRole.cs" />
+    <Compile Include="NoOfGroupsPerSessionUsage.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoOfGroupsPerSessionUsageHistory.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoOfSessionsPerEntityUsage.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoOfSessionsPerEntityUsageHistory.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionBestRecordSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StatusReasonSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TraceLog.cs" />
+    <Compile Include="GroupRule.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupRuleDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InactiveRecordSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchAttributeSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchGroup.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchGroupMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchKeyMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchRuleDropDown.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchRuleDropDownDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MatchRuleMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemoFieldConfiguration.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAM2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAM2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAM2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAM2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PAM2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfectAndMergeData.cs" />
+    <Compile Include="PriorityMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Section.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Session.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionAutoMergeRule.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionGroup.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionMatchDetail.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionResult.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionSection.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SessionThresholdSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SmartMergeConfigurationSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SuppressionHstory.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SuppressionSetting.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeMaster.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
+      <DependentUpon>PAM2.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="PAM2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PAM2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="bin\Debug\PerfectAndMergeData.dll.config" />
+    <None Include="bin\Release\PerfectAndMergeData.dll.config" />
+    <None Include="packages.config" />
+    <None Include="PAM2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PAM2.edmx</DependentUpon>
+      <LastGenOutput>PAM2.Context.cs</LastGenOutput>
+    </None>
+    <None Include="PAM2.edmx.diagram">
+      <DependentUpon>PAM2.edmx</DependentUpon>
+    </None>
+    <None Include="PAM2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PAM2.edmx</DependentUpon>
+      <LastGenOutput>PAM2.cs</LastGenOutput>
+    </None>
+    <None Include="PerfectAndMergeData.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\PerfectAndMergeData.dll" />
+    <Content Include="bin\Debug\PerfectAndMergeData.pdb" />
+    <Content Include="bin\Debug\PerfectAndMergeWrapper.dll" />
+    <Content Include="bin\Release\EntityFramework.dll" />
+    <Content Include="bin\Release\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Release\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Release\EntityFramework.xml" />
+    <Content Include="bin\Release\PerfectAndMergeData.dll" />
+    <Content Include="bin\Release\PerfectAndMergeData.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,449 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO
+END
+AttributeSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/AttributeSettingResultSet.cs
+END
+PAMCRMUser.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMCRMUser.cs
+END
+PAMBestFieldDetectionSettings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldDetectionSettings.cs
+END
+PAMRuleDropDownDetailResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMRuleDropDownDetailResultSet.cs
+END
+MatchGroupListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/MatchGroupListResultSet.cs
+END
+PAMMatchRule.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMMatchRule.cs
+END
+PAMGroupRule.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMGroupRule.cs
+END
+PAMSectionAttributeSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSectionAttributeSetting.cs
+END
+PAMMatchKeys.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMMatchKeys.cs
+END
+TimeZoneList.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/TimeZoneList.cs
+END
+PAMMatchRuleListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMMatchRuleListResultSet.cs
+END
+SessionListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/SessionListResultSet.cs
+END
+CRMUserResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/CRMUserResultSet.cs
+END
+PAMSessionResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSessionResultSet.cs
+END
+HierarchyOfPickListFields.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/HierarchyOfPickListFields.cs
+END
+PAMSectionAttributeSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSectionAttributeSettingResultSet.cs
+END
+CTLCategoriesListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/CTLCategoriesListResultSet.cs
+END
+PAMAttributeSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMAttributeSetting.cs
+END
+SessionMatchGroupAttributeSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/SessionMatchGroupAttributeSetting.cs
+END
+PamMatchGroup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PamMatchGroup.cs
+END
+MatchGroup.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/MatchGroup.cs
+END
+PAMUser.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMUser.cs
+END
+MSCRMView.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/MSCRMView.cs
+END
+PAMSessionResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSessionResult.cs
+END
+CTLCategory.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/CTLCategory.cs
+END
+PAMSessionAutoMergeRule.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSessionAutoMergeRule.cs
+END
+PAMBestField_PicklistAttribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestField_PicklistAttribute.cs
+END
+PAMBestFieldRuleParametersMasterResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldRuleParametersMasterResult.cs
+END
+UserResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/UserResultSet.cs
+END
+PAMSmartMergeConfigurationSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSmartMergeConfigurationSetting.cs
+END
+PAMSessionThresholdSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSessionThresholdSetting.cs
+END
+CTLCategoryDetail.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/CTLCategoryDetail.cs
+END
+PAMSessionThresholdSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMSessionThresholdSettingResultSet.cs
+END
+HierarchyOfPickListFieldsResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/HierarchyOfPickListFieldsResultSet.cs
+END
+PAMBestRecordDetectionSettingsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordDetectionSettingsResult.cs
+END
+PAMBestRecordDetectionSettings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordDetectionSettings.cs
+END
+EntityRecord.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/EntityRecord.cs
+END
+PAMBestFieldDetectionSettingsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldDetectionSettingsResult.cs
+END
+PAMLanguage.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMLanguage.cs
+END
+PAMBestRecordRuleParametersMasterResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordRuleParametersMasterResult.cs
+END
+PAMBestRecordRuleParametersMaster.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordRuleParametersMaster.cs
+END
+PAM1Attribute.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAM1Attribute.cs
+END
+EntitySettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/EntitySettingResultSet.cs
+END
+PAMBestField_FieldGroupsDetail.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestField_FieldGroupsDetail.cs
+END
+PAMMatchGroupAttributeSetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMMatchGroupAttributeSetting.cs
+END
+ResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/ResultSet.cs
+END
+TimeZone.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/TimeZone.cs
+END
+PriorityResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PriorityResultSet.cs
+END
+PAMGroupRuleResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMGroupRuleResultSet.cs
+END
+PAMTheme.cs
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMTheme.cs
+END
+PAMBestField_PicklistAttributeResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestField_PicklistAttributeResultSet.cs
+END
+PAMBestRecordDetectionRulesResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordDetectionRulesResult.cs
+END
+PAMBestRecordDetectionRules.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestRecordDetectionRules.cs
+END
+ValidOrgAndUserResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/ValidOrgAndUserResultSet.cs
+END
+PAMRuleDropDownDetail.cs
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMRuleDropDownDetail.cs
+END
+CTLCategoryDetailListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/CTLCategoryDetailListResultSet.cs
+END
+PAMThemeResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMThemeResultSet.cs
+END
+PickListScore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PickListScore.cs
+END
+PAMMatchKeyResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMMatchKeyResultSet.cs
+END
+PAMPriority.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMPriority.cs
+END
+Session.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/Session.cs
+END
+PAMBestFieldGroupMasterResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldGroupMasterResult.cs
+END
+PAMBestFieldRuleParametersMaster.cs
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldRuleParametersMaster.cs
+END
+EntityAutoMergeRuleResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/EntityAutoMergeRuleResultSet.cs
+END
+PAMBestFieldGroupMaster.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestFieldGroupMaster.cs
+END
+PAMLanguageResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMLanguageResultSet.cs
+END
+PAMBestField_FieldGroupsDetailResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMBestField_FieldGroupsDetailResultSet.cs
+END
+MSCRMViewsListResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/MSCRMViewsListResultSet.cs
+END
+MatchGroupAttributeSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/MatchGroupAttributeSettingResultSet.cs
+END
+SmartMergeConfigurationSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/SmartMergeConfigurationSettingResultSet.cs
+END
+PAMStatusReasonSettingsResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMStatusReasonSettingsResult.cs
+END
+PAMStatusReasonSettings.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/PAMStatusReasonSettings.cs
+END
+EntitySetting.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/EntitySetting.cs
+END
+SessionMatchGroupAttributeSettingResultSet.cs
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/DQGPAM/!svn/ver/2/PerfectAndMergeData/DTO/SessionMatchGroupAttributeSettingResultSet.cs
+END

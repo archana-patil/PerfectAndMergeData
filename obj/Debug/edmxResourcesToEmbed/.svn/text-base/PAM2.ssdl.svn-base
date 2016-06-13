@@ -1,0 +1,2118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PAM2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AttributeSetting">
+    <Key>
+      <PropertyRef Name="AttributeSettingId" />
+    </Key>
+    <Property Name="AttributeSettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SchemaName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustomName" Type="nvarchar" MaxLength="150" />
+    <Property Name="SectionId" Type="uniqueidentifier" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="IsVisible" Type="bit" />
+    <Property Name="SessionId" Type="uniqueidentifier" />
+    <Property Name="ExcludeUpdate" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="date" />
+    <Property Name="UseForAutoMerge" Type="bit" />
+  </EntityType>
+  <EntityType Name="AutoMergeLogDetails">
+    <Key>
+      <PropertyRef Name="AutoMergeLogId" />
+    </Key>
+    <Property Name="AutoMergeLogId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionName" Type="nvarchar" MaxLength="150" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="AppliedAutoMergeRules" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordsProcessed" Type="int" />
+    <Property Name="LoggedInUser" Type="uniqueidentifier" />
+    <Property Name="GroupNo" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="AutoMergeRuleMaster">
+    <Key>
+      <PropertyRef Name="AutoMergeRuleId" />
+    </Key>
+    <Property Name="AutoMergeRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="AutoPromoteAndFillLogDetails">
+    <Key>
+      <PropertyRef Name="AutoPromoteAndFillID" />
+    </Key>
+    <Property Name="AutoPromoteAndFillID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="Process" Type="nvarchar" MaxLength="50" />
+    <Property Name="RecordsProcessed" Type="int" />
+    <Property Name="LoggedInUser" Type="uniqueidentifier" />
+    <Property Name="GroupNo" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="BestFieldDetectionRules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BestFieldDetectionRuleTypesId" Type="uniqueidentifier" />
+    <Property Name="RuleName" Type="nvarchar" MaxLength="250" />
+    <Property Name="RuleEnum" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="BestFieldDetectionRuleTypes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleType" Type="nvarchar" MaxLength="200" />
+    <Property Name="RuleTypeEnum" Type="nvarchar" MaxLength="50" />
+    <Property Name="Account" Type="bit" />
+    <Property Name="Contact" Type="bit" />
+    <Property Name="Lead" Type="bit" />
+  </EntityType>
+  <EntityType Name="BestFieldDetectionSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleId" Type="uniqueidentifier" />
+    <Property Name="RuleParamId" Type="uniqueidentifier" />
+    <Property Name="OrderOfRules" Type="int" />
+    <Property Name="IsMaster" Type="bit" />
+    <Property Name="AttributeSettingId" Type="uniqueidentifier" />
+    <Property Name="SectionId" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="BestFieldDetPicklistFieldDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="BestFieldDetectionSettingsId" Type="uniqueidentifier" />
+    <Property Name="Label" Type="nvarchar" MaxLength="250" />
+    <Property Name="Value" Type="nvarchar" MaxLength="250" />
+    <Property Name="Order" Type="int" />
+  </EntityType>
+  <EntityType Name="BestFieldDetRuleParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleId" Type="uniqueidentifier" />
+    <Property Name="ParameterId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="BestFieldsDetRuleParametersMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Parameter" Type="varchar" MaxLength="250" />
+    <Property Name="ParameterEnum" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BestRecordDetectionRules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleName" Type="nvarchar" MaxLength="250" />
+    <Property Name="RuleEnum" Type="nvarchar" MaxLength="250" />
+    <Property Name="Account" Type="bit" />
+    <Property Name="Contact" Type="bit" />
+    <Property Name="Lead" Type="bit" />
+  </EntityType>
+  <EntityType Name="BestRecordDetectionSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleId" Type="uniqueidentifier" />
+    <Property Name="RuleParamId" Type="uniqueidentifier" />
+    <Property Name="OrderOfRules" Type="int" />
+    <Property Name="IsMaster" Type="bit" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="BestRecordRuleParameters">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleId" Type="uniqueidentifier" />
+    <Property Name="ParameterId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="BestRecordRuleParametersMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Parameter" Type="varchar" MaxLength="250" />
+    <Property Name="ParameterEnum" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CategoryDetail">
+    <Key>
+      <PropertyRef Name="CategoryDetaild" />
+    </Key>
+    <Property Name="CategoryDetaild" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CategoryId" Type="uniqueidentifier" />
+    <Property Name="FromText" Type="nvarchar" MaxLength="150" />
+    <Property Name="ToText" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsMaster" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsMaster" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdateBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EntityAutoMergeRule">
+    <Key>
+      <PropertyRef Name="EntityRuleId" />
+    </Key>
+    <Property Name="EntityRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" />
+    <Property Name="AutoMergeRuleId" Type="uniqueidentifier" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="EntitySetting">
+    <Key>
+      <PropertyRef Name="EntitySettingId" />
+    </Key>
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntityLogicalName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntityDisplayName" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GroupRule">
+    <Key>
+      <PropertyRef Name="GroupRuleId" />
+    </Key>
+    <Property Name="GroupRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleId" Type="uniqueidentifier" />
+    <Property Name="IsMaster" Type="bit" Nullable="false" />
+    <Property Name="Order" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GroupRuleDetail">
+    <Key>
+      <PropertyRef Name="GroupRuleDetailId" />
+    </Key>
+    <Property Name="GroupRuleDetailId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GroupRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AttributeEnum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AttributeValue" Type="nvarchar" MaxLength="50" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InactiveRecordSettings">
+    <Key>
+      <PropertyRef Name="InactiveRecordSettingsId" />
+    </Key>
+    <Property Name="InactiveRecordSettingsId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="LanguageMaster">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LanguageName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CultureCode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MatchAttributeSetting">
+    <Key>
+      <PropertyRef Name="MatchAttributeSettingId" />
+    </Key>
+    <Property Name="MatchAttributeSettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MatchGroupId" Type="uniqueidentifier" />
+    <Property Name="SchemaName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="DisplayOrder" Type="int" />
+  </EntityType>
+  <EntityType Name="MatchGroup">
+    <Key>
+      <PropertyRef Name="MatchGroupId" />
+    </Key>
+    <Property Name="MatchGroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IsMaster" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="PriorityId" Type="uniqueidentifier" />
+    <Property Name="ExcludeFromMasterKey" Type="bit" />
+    <Property Name="MatchKeyID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="MatchGroupMaster">
+    <Key>
+      <PropertyRef Name="MatchGroupId" />
+    </Key>
+    <Property Name="MatchGroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MatchKeyMaster">
+    <Key>
+      <PropertyRef Name="MatchKeyID" />
+    </Key>
+    <Property Name="MatchKeyID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MatchKey" Type="nvarchar" MaxLength="150" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="MatchRuleDropDown">
+    <Key>
+      <PropertyRef Name="DropDownId" />
+    </Key>
+    <Property Name="DropDownId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="10" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MatchRuleDropDownDetail">
+    <Key>
+      <PropertyRef Name="DropDownDetailId" />
+    </Key>
+    <Property Name="DropDownDetailId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DropDownId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="MatchRuleMaster">
+    <Key>
+      <PropertyRef Name="MatchRuleId" />
+    </Key>
+    <Property Name="MatchRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RuleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="25" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MemoFieldConfiguration">
+    <Key>
+      <PropertyRef Name="ConfigId" />
+    </Key>
+    <Property Name="ConfigId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SchemaName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CustomName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="DefaultAction" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedBy" Type="uniqueidentifier" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NoOfGroupsPerSessionUsage">
+    <Key>
+      <PropertyRef Name="SessionId" />
+      <PropertyRef Name="PackageId" />
+    </Key>
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PackageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsedValue" Type="int" />
+  </EntityType>
+  <EntityType Name="NoOfGroupsPerSessionUsageHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PackageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsedValue" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="OperationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NoOfSessionsPerEntityUsage">
+    <Key>
+      <PropertyRef Name="PackageId" />
+      <PropertyRef Name="EntitySettingId" />
+    </Key>
+    <Property Name="PackageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsedValue" Type="int" />
+  </EntityType>
+  <EntityType Name="NoOfSessionsPerEntityUsageHistory">
+    <Key>
+      <PropertyRef Name="HistoryId" />
+    </Key>
+    <Property Name="HistoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PackageId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UsedValue" Type="int" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="OperationType" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PriorityMaster">
+    <Key>
+      <PropertyRef Name="PriorityId" />
+    </Key>
+    <Property Name="PriorityId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Priority" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Section">
+    <Key>
+      <PropertyRef Name="SectionId" />
+    </Key>
+    <Property Name="SectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SectionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime2" Precision="7" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionName" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefreshDate" Type="datetime" />
+    <Property Name="GroupCount" Type="int" />
+    <Property Name="MergeStatus" Type="uniqueidentifier" />
+    <Property Name="IsAutoMergeInProgress" Type="bit" />
+    <Property Name="IsDeactivated" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="OutputFilePath" Type="nvarchar" MaxLength="150" />
+    <Property Name="ExecutedBy" Type="uniqueidentifier" />
+    <Property Name="ExecutedOn" Type="datetime" />
+    <Property Name="ExecutionEnd" Type="datetime" />
+    <Property Name="IsAutoPromoteInProgress" Type="bit" />
+    <Property Name="IsAutoFillInProgress" Type="bit" />
+    <Property Name="IsAutoFillAndPromoteInProgress" Type="bit" />
+    <Property Name="IsAutoPromotedAll" Type="bit" />
+    <Property Name="IsAutoFillAll" Type="bit" />
+    <Property Name="IsAutoPromoteFillAll" Type="bit" />
+  </EntityType>
+  <EntityType Name="SessionAutoMergeRule">
+    <Key>
+      <PropertyRef Name="SessionAutoMergeRuleId" />
+    </Key>
+    <Property Name="SessionAutoMergeRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntityAutoMergeRuleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="SessionBestRecordSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" />
+    <Property Name="BestRecordDetectionSettingsId" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SessionGroup">
+    <Key>
+      <PropertyRef Name="SessionGroupId" />
+    </Key>
+    <Property Name="SessionGroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MatchGroupId" Type="uniqueidentifier" />
+    <Property Name="PriorityId" Type="uniqueidentifier" />
+    <Property Name="ExcludeFromMasterKey" Type="bit" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="MatchKeyID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SessionMatchDetail">
+    <Key>
+      <PropertyRef Name="SessionMatchId" />
+    </Key>
+    <Property Name="SessionMatchId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RecordsFed" Type="int" Nullable="false" />
+    <Property Name="DuplicatesFound" Type="int" />
+    <Property Name="ConfirmedResultCount" Type="int" />
+    <Property Name="UnsureResultCount" Type="int" />
+  </EntityType>
+  <EntityType Name="SessionResult">
+    <Key>
+      <PropertyRef Name="SessionResultId" />
+    </Key>
+    <Property Name="SessionResultId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RecordId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ValidGroup" Type="bit" />
+    <Property Name="GroupNo" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="GroupRank" Type="int" />
+    <Property Name="MatchScore" Type="int" />
+    <Property Name="PunchIn" Type="datetime" />
+    <Property Name="PunchOut" Type="datetime" />
+    <Property Name="ReviewStatus" Type="uniqueidentifier" />
+    <Property Name="Reviewer" Type="uniqueidentifier" />
+    <Property Name="CurentStatusDateTime" Type="datetime" />
+    <Property Name="EntityHeaderFieldValue" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsPrimary" Type="bit" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UserNotes" Type="varchar" MaxLength="1000" />
+    <Property Name="AutoPromote" Type="bit" />
+    <Property Name="AutoFill" Type="bit" />
+    <Property Name="AutoPromoteFill" Type="bit" />
+  </EntityType>
+  <EntityType Name="SessionSection">
+    <Key>
+      <PropertyRef Name="SessionSectionId" />
+    </Key>
+    <Property Name="SessionSectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SectionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SessionThresholdSetting">
+    <Key>
+      <PropertyRef Name="SessionThresholdId" />
+    </Key>
+    <Property Name="SessionThresholdId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Threshold1" Type="int" Nullable="false" />
+    <Property Name="Threshold2" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="uniqueidentifier" />
+    <Property Name="IncludeOriginal" Type="bit" />
+    <Property Name="TreatNulls" Type="bit" />
+    <Property Name="MatchKeyID" Type="uniqueidentifier" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="ViewType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ViewName" Type="nvarchar" MaxLength="250" />
+    <Property Name="FetchXML" Type="nvarchar(max)" />
+    <Property Name="ValueToNull" Type="bit" />
+  </EntityType>
+  <EntityType Name="SmartMergeConfigurationSetting">
+    <Key>
+      <PropertyRef Name="SmartMergeConfigId" />
+    </Key>
+    <Property Name="SmartMergeConfigId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="DataValue" Type="int" />
+    <Property Name="StartDateTime" Type="datetime" />
+    <Property Name="EndDateTime" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="SystemIdleWaitTiimeInMinutes" Type="int" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Enum" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StatusReasonSettings">
+    <Key>
+      <PropertyRef Name="StatusReasonSettingsId" />
+    </Key>
+    <Property Name="StatusReasonSettingsId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" />
+    <Property Name="StatusReasonFieldSchema" Type="nvarchar" MaxLength="100" />
+    <Property Name="StatusReasonFieldDisplay" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="SuppressionHstory">
+    <Key>
+      <PropertyRef Name="SuppressionHistoryId" />
+    </Key>
+    <Property Name="SuppressionHistoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RecordType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntitySettingId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ReviewStatus" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PrimaryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SecondaryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SuppressKey" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ReviewedBy" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SuppressionSettings">
+    <Key>
+      <PropertyRef Name="SuppressionSettingsId" />
+    </Key>
+    <Property Name="SuppressionSettingsId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdatedDate" Type="date" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="ThemeMaster">
+    <Key>
+      <PropertyRef Name="ThemeId" />
+    </Key>
+    <Property Name="ThemeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThemeFileName" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsApplied" Type="bit" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CRMUserId" Type="uniqueidentifier" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsPrimary" Type="bit" />
+    <Property Name="SkipDeferred" Type="bit" />
+    <Property Name="GridWidth" Type="int" />
+    <Property Name="GridHeight" Type="int" />
+    <Property Name="CreatedBy" Type="uniqueidentifier" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="uniqueidentifier" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="AreTermsAccepted" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Name="UserRoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AttributeSetting_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_Section">
+    <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="0..1" />
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttributeSetting_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AttributeSetting">
+        <PropertyRef Name="UpdateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_AutoMergeLogDetails">
+    <End Role="AutoMergeLogDetails" Type="Self.AutoMergeLogDetails" Multiplicity="1" />
+    <End Role="AutoMergeLogDetails1" Type="Self.AutoMergeLogDetails" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AutoMergeLogDetails">
+        <PropertyRef Name="AutoMergeLogId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetails1">
+        <PropertyRef Name="AutoMergeLogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="AutoMergeLogDetails" Type="Self.AutoMergeLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetails">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="AutoMergeLogDetails" Type="Self.AutoMergeLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetails">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoMergeLogDetails_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AutoMergeLogDetails" Type="Self.AutoMergeLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AutoMergeLogDetails">
+        <PropertyRef Name="LoggedInUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoPromoteAndFill_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="AutoPromoteAndFillLogDetails" Type="Self.AutoPromoteAndFillLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetails">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoPromoteAndFill_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="AutoPromoteAndFillLogDetails" Type="Self.AutoPromoteAndFillLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetails">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoPromoteAndFill_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AutoPromoteAndFillLogDetails" Type="Self.AutoPromoteAndFillLogDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="AutoPromoteAndFillLogDetails">
+        <PropertyRef Name="LoggedInUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes">
+    <End Role="BestFieldDetectionRuleTypes" Type="Self.BestFieldDetectionRuleTypes" Multiplicity="0..1" />
+    <End Role="BestFieldDetectionRules" Type="Self.BestFieldDetectionRules" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRuleTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionRules">
+        <PropertyRef Name="BestFieldDetectionRuleTypesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_AttributeSetting">
+    <End Role="AttributeSetting" Type="Self.AttributeSetting" Multiplicity="0..1" />
+    <End Role="BestFieldDetectionSettings" Type="Self.BestFieldDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttributeSetting">
+        <PropertyRef Name="AttributeSettingId" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSettings">
+        <PropertyRef Name="AttributeSettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_BestFieldDetectionRules">
+    <End Role="BestFieldDetectionRules" Type="Self.BestFieldDetectionRules" Multiplicity="0..1" />
+    <End Role="BestFieldDetectionSettings" Type="Self.BestFieldDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSettings">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster">
+    <End Role="BestFieldsDetRuleParametersMaster" Type="Self.BestFieldsDetRuleParametersMaster" Multiplicity="0..1" />
+    <End Role="BestFieldDetectionSettings" Type="Self.BestFieldDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldsDetRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSettings">
+        <PropertyRef Name="RuleParamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetectionSettings_Section">
+    <End Role="Section" Type="Self.Section" Multiplicity="0..1" />
+    <End Role="BestFieldDetectionSettings" Type="Self.BestFieldDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="BestFieldDetectionSettings">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings">
+    <End Role="BestFieldDetectionSettings" Type="Self.BestFieldDetectionSettings" Multiplicity="0..1" />
+    <End Role="BestFieldDetPicklistFieldDetail" Type="Self.BestFieldDetPicklistFieldDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionSettings">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetPicklistFieldDetail">
+        <PropertyRef Name="BestFieldDetectionSettingsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster">
+    <End Role="BestFieldsDetRuleParametersMaster" Type="Self.BestFieldsDetRuleParametersMaster" Multiplicity="0..1" />
+    <End Role="BestFieldDetRuleParameters" Type="Self.BestFieldDetRuleParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldsDetRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetRuleParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestFieldDetRuleParameters_BestRecordDetectionRules">
+    <End Role="BestFieldDetectionRules" Type="Self.BestFieldDetectionRules" Multiplicity="0..1" />
+    <End Role="BestFieldDetRuleParameters" Type="Self.BestFieldDetRuleParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestFieldDetectionRules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestFieldDetRuleParameters">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordDetectionSettings_BestRecordDetectionRules">
+    <End Role="BestRecordDetectionRules" Type="Self.BestRecordDetectionRules" Multiplicity="0..1" />
+    <End Role="BestRecordDetectionSettings" Type="Self.BestRecordDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionRules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordDetectionSettings">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster">
+    <End Role="BestRecordRuleParametersMaster" Type="Self.BestRecordRuleParametersMaster" Multiplicity="0..1" />
+    <End Role="BestRecordDetectionSettings" Type="Self.BestRecordDetectionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordDetectionSettings">
+        <PropertyRef Name="RuleParamId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordRuleParameters_BestRecordDetectionRules">
+    <End Role="BestRecordDetectionRules" Type="Self.BestRecordDetectionRules" Multiplicity="0..1" />
+    <End Role="BestRecordRuleParameters" Type="Self.BestRecordRuleParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionRules">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordRuleParameters">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BestRecordRuleParameters_BestRecordRuleParametersMaster">
+    <End Role="BestRecordRuleParametersMaster" Type="Self.BestRecordRuleParametersMaster" Multiplicity="0..1" />
+    <End Role="BestRecordRuleParameters" Type="Self.BestRecordRuleParameters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordRuleParametersMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BestRecordRuleParameters">
+        <PropertyRef Name="ParameterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryDetail_CategoryMaster">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="0..1" />
+    <End Role="CategoryDetail" Type="Self.CategoryDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="CategoryDetail">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityAutoMergeRule_AutoMergeRuleMaster">
+    <End Role="AutoMergeRuleMaster" Type="Self.AutoMergeRuleMaster" Multiplicity="0..1" />
+    <End Role="EntityAutoMergeRule" Type="Self.EntityAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AutoMergeRuleMaster">
+        <PropertyRef Name="AutoMergeRuleId" />
+      </Principal>
+      <Dependent Role="EntityAutoMergeRule">
+        <PropertyRef Name="AutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EntityAutoMergeRule_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="0..1" />
+    <End Role="EntityAutoMergeRule" Type="Self.EntityAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="EntityAutoMergeRule">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRule_MatchRuleMaster">
+    <End Role="MatchRuleMaster" Type="Self.MatchRuleMaster" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GroupRule" Type="Self.GroupRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleMaster">
+        <PropertyRef Name="MatchRuleId" />
+      </Principal>
+      <Dependent Role="GroupRule">
+        <PropertyRef Name="RuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupRuleDetail_GroupRule">
+    <End Role="GroupRule" Type="Self.GroupRule" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GroupRuleDetail" Type="Self.GroupRuleDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupRule">
+        <PropertyRef Name="GroupRuleId" />
+      </Principal>
+      <Dependent Role="GroupRuleDetail">
+        <PropertyRef Name="GroupRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InactiveRecordSettings_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="InactiveRecordSettings" Type="Self.InactiveRecordSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InactiveRecordSettings">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InactiveRecordSettings_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="InactiveRecordSettings" Type="Self.InactiveRecordSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="InactiveRecordSettings">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="MatchAttributeSetting" Type="Self.MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_MatchGroup">
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="0..1" />
+    <End Role="MatchAttributeSetting" Type="Self.MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="MatchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="0..1" />
+    <End Role="MatchAttributeSetting" Type="Self.MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchAttributeSetting" Type="Self.MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchAttributeSetting_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchAttributeSetting" Type="Self.MatchAttributeSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchAttributeSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_MatchKeyMaster">
+    <End Role="MatchKeyMaster" Type="Self.MatchKeyMaster" Multiplicity="0..1" />
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_PriorityMaster">
+    <End Role="PriorityMaster" Type="Self.PriorityMaster" Multiplicity="0..1" />
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriorityMaster">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroup_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroup">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroupMaster_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchGroupMaster" Type="Self.MatchGroupMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroupMaster">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchGroupMaster_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MatchGroupMaster" Type="Self.MatchGroupMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="MatchGroupMaster">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchRuleDropDownDetail_MatchRuleDropDown">
+    <End Role="MatchRuleDropDown" Type="Self.MatchRuleDropDown" Multiplicity="1" />
+    <End Role="MatchRuleDropDownDetail" Type="Self.MatchRuleDropDownDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleDropDown">
+        <PropertyRef Name="DropDownId" />
+      </Principal>
+      <Dependent Role="MatchRuleDropDownDetail">
+        <PropertyRef Name="DropDownId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail">
+    <End Role="MatchRuleDropDownDetail" Type="Self.MatchRuleDropDownDetail" Multiplicity="0..1" />
+    <End Role="MatchRuleDropDownDetail1" Type="Self.MatchRuleDropDownDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchRuleDropDownDetail">
+        <PropertyRef Name="DropDownDetailId" />
+      </Principal>
+      <Dependent Role="MatchRuleDropDownDetail1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Section_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Section" Type="Self.Section" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Section">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="Session1" Type="Self.Session" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="Session1">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="MergeStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Session_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_EntityAutoMergeRule">
+    <End Role="EntityAutoMergeRule" Type="Self.EntityAutoMergeRule" Multiplicity="1" />
+    <End Role="SessionAutoMergeRule" Type="Self.SessionAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntityAutoMergeRule">
+        <PropertyRef Name="EntityRuleId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule">
+        <PropertyRef Name="EntityAutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionAutoMergeRule" Type="Self.SessionAutoMergeRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionAutoMergeRule_SessionAutoMergeRule">
+    <End Role="SessionAutoMergeRule" Type="Self.SessionAutoMergeRule" Multiplicity="1" />
+    <End Role="SessionAutoMergeRule1" Type="Self.SessionAutoMergeRule" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SessionAutoMergeRule">
+        <PropertyRef Name="SessionAutoMergeRuleId" />
+      </Principal>
+      <Dependent Role="SessionAutoMergeRule1">
+        <PropertyRef Name="SessionAutoMergeRuleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionBestRecordSettings_BestRecordDetectionSettings">
+    <End Role="BestRecordDetectionSettings" Type="Self.BestRecordDetectionSettings" Multiplicity="0..1" />
+    <End Role="SessionBestRecordSettings" Type="Self.SessionBestRecordSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BestRecordDetectionSettings">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SessionBestRecordSettings">
+        <PropertyRef Name="BestRecordDetectionSettingsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionBestRecordSettings_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="0..1" />
+    <End Role="SessionBestRecordSettings" Type="Self.SessionBestRecordSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionBestRecordSettings">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_MatchGroup">
+    <End Role="MatchGroup" Type="Self.MatchGroup" Multiplicity="0..1" />
+    <End Role="SessionGroup" Type="Self.SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="MatchGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_MatchKeyMaster">
+    <End Role="MatchKeyMaster" Type="Self.MatchKeyMaster" Multiplicity="0..1" />
+    <End Role="SessionGroup" Type="Self.SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_PriorityMaster">
+    <End Role="PriorityMaster" Type="Self.PriorityMaster" Multiplicity="0..1" />
+    <End Role="SessionGroup" Type="Self.SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriorityMaster">
+        <PropertyRef Name="PriorityId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="PriorityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionGroup" Type="Self.SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionGroup_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionGroup" Type="Self.SessionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionGroup">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionMatchDetail_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionMatchDetail" Type="Self.SessionMatchDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionMatchDetail">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionResult" Type="Self.SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+    <End Role="SessionResult" Type="Self.SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="ReviewStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionResult_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionResult" Type="Self.SessionResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionResult">
+        <PropertyRef Name="Reviewer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_Section">
+    <End Role="Section" Type="Self.Section" Multiplicity="1" />
+    <End Role="SessionSection" Type="Self.SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Section">
+        <PropertyRef Name="SectionId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="SectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionSection" Type="Self.SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionSection" Type="Self.SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionSection_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionSection" Type="Self.SessionSection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionSection">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_LanguageMaster">
+    <End Role="LanguageMaster" Type="Self.LanguageMaster" Multiplicity="0..1" />
+    <End Role="SessionThresholdSetting" Type="Self.SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LanguageMaster">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_Session">
+    <End Role="Session" Type="Self.Session" Multiplicity="1" />
+    <End Role="SessionThresholdSetting" Type="Self.SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Session">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_SessionThresholdSetting">
+    <End Role="MatchKeyMaster" Type="Self.MatchKeyMaster" Multiplicity="0..1" />
+    <End Role="SessionThresholdSetting" Type="Self.SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MatchKeyMaster">
+        <PropertyRef Name="MatchKeyID" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="MatchKeyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionThresholdSetting" Type="Self.SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SessionThresholdSetting_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SessionThresholdSetting" Type="Self.SessionThresholdSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SessionThresholdSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SmartMergeConfigurationSetting_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SmartMergeConfigurationSetting" Type="Self.SmartMergeConfigurationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SmartMergeConfigurationSetting">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SmartMergeConfigurationSetting_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SmartMergeConfigurationSetting" Type="Self.SmartMergeConfigurationSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SmartMergeConfigurationSetting">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_EntitySetting">
+    <End Role="EntitySetting" Type="Self.EntitySetting" Multiplicity="1" />
+    <End Role="SuppressionHstory" Type="Self.SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EntitySetting">
+        <PropertyRef Name="EntitySettingId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="EntitySettingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="SuppressionHstory" Type="Self.SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="ReviewStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="SuppressionHstory" Type="Self.SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="ReviewedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionHstory_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SuppressionHstory" Type="Self.SuppressionHstory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionHstory">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionSettings_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SuppressionSettings" Type="Self.SuppressionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionSettings">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SuppressionSettings_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="SuppressionSettings" Type="Self.SuppressionSettings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="SuppressionSettings">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_User1">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="User1" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PAM2ModelStoreContainer">
+    <EntitySet Name="AttributeSetting" EntityType="Self.AttributeSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoMergeLogDetails" EntityType="Self.AutoMergeLogDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoMergeRuleMaster" EntityType="Self.AutoMergeRuleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoPromoteAndFillLogDetails" EntityType="Self.AutoPromoteAndFillLogDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldDetectionRules" EntityType="Self.BestFieldDetectionRules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldDetectionRuleTypes" EntityType="Self.BestFieldDetectionRuleTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldDetectionSettings" EntityType="Self.BestFieldDetectionSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldDetPicklistFieldDetail" EntityType="Self.BestFieldDetPicklistFieldDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldDetRuleParameters" EntityType="Self.BestFieldDetRuleParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestFieldsDetRuleParametersMaster" EntityType="Self.BestFieldsDetRuleParametersMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestRecordDetectionRules" EntityType="Self.BestRecordDetectionRules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestRecordDetectionSettings" EntityType="Self.BestRecordDetectionSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestRecordRuleParameters" EntityType="Self.BestRecordRuleParameters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BestRecordRuleParametersMaster" EntityType="Self.BestRecordRuleParametersMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryDetail" EntityType="Self.CategoryDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntityAutoMergeRule" EntityType="Self.EntityAutoMergeRule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EntitySetting" EntityType="Self.EntitySetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupRule" EntityType="Self.GroupRule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupRuleDetail" EntityType="Self.GroupRuleDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InactiveRecordSettings" EntityType="Self.InactiveRecordSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LanguageMaster" EntityType="Self.LanguageMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchAttributeSetting" EntityType="Self.MatchAttributeSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchGroup" EntityType="Self.MatchGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchGroupMaster" EntityType="Self.MatchGroupMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchKeyMaster" EntityType="Self.MatchKeyMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchRuleDropDown" EntityType="Self.MatchRuleDropDown" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchRuleDropDownDetail" EntityType="Self.MatchRuleDropDownDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MatchRuleMaster" EntityType="Self.MatchRuleMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MemoFieldConfiguration" EntityType="Self.MemoFieldConfiguration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoOfGroupsPerSessionUsage" EntityType="Self.NoOfGroupsPerSessionUsage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoOfGroupsPerSessionUsageHistory" EntityType="Self.NoOfGroupsPerSessionUsageHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoOfSessionsPerEntityUsage" EntityType="Self.NoOfSessionsPerEntityUsage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NoOfSessionsPerEntityUsageHistory" EntityType="Self.NoOfSessionsPerEntityUsageHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PriorityMaster" EntityType="Self.PriorityMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Section" EntityType="Self.Section" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionAutoMergeRule" EntityType="Self.SessionAutoMergeRule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionBestRecordSettings" EntityType="Self.SessionBestRecordSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionGroup" EntityType="Self.SessionGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionMatchDetail" EntityType="Self.SessionMatchDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionResult" EntityType="Self.SessionResult" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionSection" EntityType="Self.SessionSection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SessionThresholdSetting" EntityType="Self.SessionThresholdSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SmartMergeConfigurationSetting" EntityType="Self.SmartMergeConfigurationSetting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StatusReasonSettings" EntityType="Self.StatusReasonSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppressionHstory" EntityType="Self.SuppressionHstory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SuppressionSettings" EntityType="Self.SuppressionSettings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThemeMaster" EntityType="Self.ThemeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AttributeSetting_EntitySetting" Association="Self.FK_AttributeSetting_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_Section" Association="Self.FK_AttributeSetting_Section">
+      <End Role="Section" EntitySet="Section" />
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_Session" Association="Self.FK_AttributeSetting_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_User" Association="Self.FK_AttributeSetting_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttributeSetting_User1" Association="Self.FK_AttributeSetting_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_AutoMergeLogDetails" Association="Self.FK_AutoMergeLogDetails_AutoMergeLogDetails">
+      <End Role="AutoMergeLogDetails" EntitySet="AutoMergeLogDetails" />
+      <End Role="AutoMergeLogDetails1" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_EntitySetting" Association="Self.FK_AutoMergeLogDetails_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="AutoMergeLogDetails" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_Session" Association="Self.FK_AutoMergeLogDetails_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="AutoMergeLogDetails" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoMergeLogDetails_User" Association="Self.FK_AutoMergeLogDetails_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AutoMergeLogDetails" EntitySet="AutoMergeLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoPromoteAndFill_EntitySetting" Association="Self.FK_AutoPromoteAndFill_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="AutoPromoteAndFillLogDetails" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoPromoteAndFill_Session" Association="Self.FK_AutoPromoteAndFill_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="AutoPromoteAndFillLogDetails" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoPromoteAndFill_User" Association="Self.FK_AutoPromoteAndFill_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="AutoPromoteAndFillLogDetails" EntitySet="AutoPromoteAndFillLogDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes" Association="Self.FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes">
+      <End Role="BestFieldDetectionRuleTypes" EntitySet="BestFieldDetectionRuleTypes" />
+      <End Role="BestFieldDetectionRules" EntitySet="BestFieldDetectionRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_AttributeSetting" Association="Self.FK_BestFieldDetectionSettings_AttributeSetting">
+      <End Role="AttributeSetting" EntitySet="AttributeSetting" />
+      <End Role="BestFieldDetectionSettings" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_BestFieldDetectionRules" Association="Self.FK_BestFieldDetectionSettings_BestFieldDetectionRules">
+      <End Role="BestFieldDetectionRules" EntitySet="BestFieldDetectionRules" />
+      <End Role="BestFieldDetectionSettings" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster" Association="Self.FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster">
+      <End Role="BestFieldsDetRuleParametersMaster" EntitySet="BestFieldsDetRuleParametersMaster" />
+      <End Role="BestFieldDetectionSettings" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetectionSettings_Section" Association="Self.FK_BestFieldDetectionSettings_Section">
+      <End Role="Section" EntitySet="Section" />
+      <End Role="BestFieldDetectionSettings" EntitySet="BestFieldDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings" Association="Self.FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings">
+      <End Role="BestFieldDetectionSettings" EntitySet="BestFieldDetectionSettings" />
+      <End Role="BestFieldDetPicklistFieldDetail" EntitySet="BestFieldDetPicklistFieldDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster" Association="Self.FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster">
+      <End Role="BestFieldsDetRuleParametersMaster" EntitySet="BestFieldsDetRuleParametersMaster" />
+      <End Role="BestFieldDetRuleParameters" EntitySet="BestFieldDetRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestFieldDetRuleParameters_BestRecordDetectionRules" Association="Self.FK_BestFieldDetRuleParameters_BestRecordDetectionRules">
+      <End Role="BestFieldDetectionRules" EntitySet="BestFieldDetectionRules" />
+      <End Role="BestFieldDetRuleParameters" EntitySet="BestFieldDetRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordDetectionSettings_BestRecordDetectionRules" Association="Self.FK_BestRecordDetectionSettings_BestRecordDetectionRules">
+      <End Role="BestRecordDetectionRules" EntitySet="BestRecordDetectionRules" />
+      <End Role="BestRecordDetectionSettings" EntitySet="BestRecordDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster" Association="Self.FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster">
+      <End Role="BestRecordRuleParametersMaster" EntitySet="BestRecordRuleParametersMaster" />
+      <End Role="BestRecordDetectionSettings" EntitySet="BestRecordDetectionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordRuleParameters_BestRecordDetectionRules" Association="Self.FK_BestRecordRuleParameters_BestRecordDetectionRules">
+      <End Role="BestRecordDetectionRules" EntitySet="BestRecordDetectionRules" />
+      <End Role="BestRecordRuleParameters" EntitySet="BestRecordRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BestRecordRuleParameters_BestRecordRuleParametersMaster" Association="Self.FK_BestRecordRuleParameters_BestRecordRuleParametersMaster">
+      <End Role="BestRecordRuleParametersMaster" EntitySet="BestRecordRuleParametersMaster" />
+      <End Role="BestRecordRuleParameters" EntitySet="BestRecordRuleParameters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryDetail_CategoryMaster" Association="Self.FK_CategoryDetail_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="CategoryDetail" EntitySet="CategoryDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityAutoMergeRule_AutoMergeRuleMaster" Association="Self.FK_EntityAutoMergeRule_AutoMergeRuleMaster">
+      <End Role="AutoMergeRuleMaster" EntitySet="AutoMergeRuleMaster" />
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EntityAutoMergeRule_EntitySetting" Association="Self.FK_EntityAutoMergeRule_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRule_MatchRuleMaster" Association="Self.FK_GroupRule_MatchRuleMaster">
+      <End Role="MatchRuleMaster" EntitySet="MatchRuleMaster" />
+      <End Role="GroupRule" EntitySet="GroupRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupRuleDetail_GroupRule" Association="Self.FK_GroupRuleDetail_GroupRule">
+      <End Role="GroupRule" EntitySet="GroupRule" />
+      <End Role="GroupRuleDetail" EntitySet="GroupRuleDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InactiveRecordSettings_User" Association="Self.FK_InactiveRecordSettings_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="InactiveRecordSettings" EntitySet="InactiveRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InactiveRecordSettings_User1" Association="Self.FK_InactiveRecordSettings_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="InactiveRecordSettings" EntitySet="InactiveRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_EntitySetting" Association="Self.FK_MatchAttributeSetting_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_MatchGroup" Association="Self.FK_MatchAttributeSetting_MatchGroup">
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_Session" Association="Self.FK_MatchAttributeSetting_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_User" Association="Self.FK_MatchAttributeSetting_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchAttributeSetting_User1" Association="Self.FK_MatchAttributeSetting_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchAttributeSetting" EntitySet="MatchAttributeSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_EntitySetting" Association="Self.FK_MatchGroup_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_MatchKeyMaster" Association="Self.FK_MatchGroup_MatchKeyMaster">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMaster" />
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_PriorityMaster" Association="Self.FK_MatchGroup_PriorityMaster">
+      <End Role="PriorityMaster" EntitySet="PriorityMaster" />
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_User" Association="Self.FK_MatchGroup_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroup_User1" Association="Self.FK_MatchGroup_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroupMaster_User" Association="Self.FK_MatchGroupMaster_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchGroupMaster" EntitySet="MatchGroupMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchGroupMaster_User1" Association="Self.FK_MatchGroupMaster_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="MatchGroupMaster" EntitySet="MatchGroupMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchRuleDropDownDetail_MatchRuleDropDown" Association="Self.FK_MatchRuleDropDownDetail_MatchRuleDropDown">
+      <End Role="MatchRuleDropDown" EntitySet="MatchRuleDropDown" />
+      <End Role="MatchRuleDropDownDetail" EntitySet="MatchRuleDropDownDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail" Association="Self.FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail">
+      <End Role="MatchRuleDropDownDetail" EntitySet="MatchRuleDropDownDetail" />
+      <End Role="MatchRuleDropDownDetail1" EntitySet="MatchRuleDropDownDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_EntitySetting" Association="Self.FK_Section_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="Section" EntitySet="Section" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_User" Association="Self.FK_Section_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Section" EntitySet="Section" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Section_User1" Association="Self.FK_Section_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Section" EntitySet="Section" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_EntitySetting" Association="Self.FK_Session_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Session" Association="Self.FK_Session_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="Session1" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_Status" Association="Self.FK_Session_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_User" Association="Self.FK_Session_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Session_User1" Association="Self.FK_Session_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_EntityAutoMergeRule" Association="Self.FK_SessionAutoMergeRule_EntityAutoMergeRule">
+      <End Role="EntityAutoMergeRule" EntitySet="EntityAutoMergeRule" />
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_Session" Association="Self.FK_SessionAutoMergeRule_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionAutoMergeRule_SessionAutoMergeRule" Association="Self.FK_SessionAutoMergeRule_SessionAutoMergeRule">
+      <End Role="SessionAutoMergeRule" EntitySet="SessionAutoMergeRule" />
+      <End Role="SessionAutoMergeRule1" EntitySet="SessionAutoMergeRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionBestRecordSettings_BestRecordDetectionSettings" Association="Self.FK_SessionBestRecordSettings_BestRecordDetectionSettings">
+      <End Role="BestRecordDetectionSettings" EntitySet="BestRecordDetectionSettings" />
+      <End Role="SessionBestRecordSettings" EntitySet="SessionBestRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionBestRecordSettings_Session" Association="Self.FK_SessionBestRecordSettings_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionBestRecordSettings" EntitySet="SessionBestRecordSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_MatchGroup" Association="Self.FK_SessionGroup_MatchGroup">
+      <End Role="MatchGroup" EntitySet="MatchGroup" />
+      <End Role="SessionGroup" EntitySet="SessionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_MatchKeyMaster" Association="Self.FK_SessionGroup_MatchKeyMaster">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMaster" />
+      <End Role="SessionGroup" EntitySet="SessionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_PriorityMaster" Association="Self.FK_SessionGroup_PriorityMaster">
+      <End Role="PriorityMaster" EntitySet="PriorityMaster" />
+      <End Role="SessionGroup" EntitySet="SessionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_Session" Association="Self.FK_SessionGroup_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionGroup" EntitySet="SessionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionGroup_User" Association="Self.FK_SessionGroup_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionGroup" EntitySet="SessionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionMatchDetail_Session" Association="Self.FK_SessionMatchDetail_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionMatchDetail" EntitySet="SessionMatchDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_Session" Association="Self.FK_SessionResult_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionResult" EntitySet="SessionResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_Status" Association="Self.FK_SessionResult_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SessionResult" EntitySet="SessionResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionResult_User" Association="Self.FK_SessionResult_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionResult" EntitySet="SessionResult" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_Section" Association="Self.FK_SessionSection_Section">
+      <End Role="Section" EntitySet="Section" />
+      <End Role="SessionSection" EntitySet="SessionSection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_Session" Association="Self.FK_SessionSection_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionSection" EntitySet="SessionSection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_User" Association="Self.FK_SessionSection_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionSection" EntitySet="SessionSection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionSection_User1" Association="Self.FK_SessionSection_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionSection" EntitySet="SessionSection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_LanguageMaster" Association="Self.FK_SessionThresholdSetting_LanguageMaster">
+      <End Role="LanguageMaster" EntitySet="LanguageMaster" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_Session" Association="Self.FK_SessionThresholdSetting_Session">
+      <End Role="Session" EntitySet="Session" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_SessionThresholdSetting" Association="Self.FK_SessionThresholdSetting_SessionThresholdSetting">
+      <End Role="MatchKeyMaster" EntitySet="MatchKeyMaster" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_User" Association="Self.FK_SessionThresholdSetting_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SessionThresholdSetting_User1" Association="Self.FK_SessionThresholdSetting_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="SessionThresholdSetting" EntitySet="SessionThresholdSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SmartMergeConfigurationSetting_User" Association="Self.FK_SmartMergeConfigurationSetting_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SmartMergeConfigurationSetting" EntitySet="SmartMergeConfigurationSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SmartMergeConfigurationSetting_User1" Association="Self.FK_SmartMergeConfigurationSetting_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="SmartMergeConfigurationSetting" EntitySet="SmartMergeConfigurationSetting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_EntitySetting" Association="Self.FK_SuppressionHstory_EntitySetting">
+      <End Role="EntitySetting" EntitySet="EntitySetting" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_Status" Association="Self.FK_SuppressionHstory_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_User" Association="Self.FK_SuppressionHstory_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionHstory_User1" Association="Self.FK_SuppressionHstory_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuppressionHstory" EntitySet="SuppressionHstory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionSettings_User" Association="Self.FK_SuppressionSettings_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuppressionSettings" EntitySet="SuppressionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SuppressionSettings_User1" Association="Self.FK_SuppressionSettings_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="SuppressionSettings" EntitySet="SuppressionSettings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User" Association="Self.FK_User_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_User1" Association="Self.FK_User_User1">
+      <End Role="User" EntitySet="User" />
+      <End Role="User1" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role" Association="Self.FK_UserRole_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User" Association="Self.FK_UserRole_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,741 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PAM2ModelStoreContainer" CdmEntityContainer="PAM2Entities">
+    <EntitySetMapping Name="AutoMergeLogDetails">
+      <EntityTypeMapping TypeName="PAM2Model.AutoMergeLogDetail">
+        <MappingFragment StoreEntitySet="AutoMergeLogDetails">
+          <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+          <ScalarProperty Name="LoggedInUser" ColumnName="LoggedInUser" />
+          <ScalarProperty Name="RecordsProcessed" ColumnName="RecordsProcessed" />
+          <ScalarProperty Name="AppliedAutoMergeRules" ColumnName="AppliedAutoMergeRules" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="AutoMergeLogId" ColumnName="AutoMergeLogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoMergeRuleMasters">
+      <EntityTypeMapping TypeName="PAM2Model.AutoMergeRuleMaster">
+        <MappingFragment StoreEntitySet="AutoMergeRuleMaster">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AutoMergeRuleId" ColumnName="AutoMergeRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryDetails">
+      <EntityTypeMapping TypeName="PAM2Model.CategoryDetail">
+        <MappingFragment StoreEntitySet="CategoryDetail">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="ToText" ColumnName="ToText" />
+          <ScalarProperty Name="FromText" ColumnName="FromText" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="CategoryDetaild" ColumnName="CategoryDetaild" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryMasters">
+      <EntityTypeMapping TypeName="PAM2Model.CategoryMaster">
+        <MappingFragment StoreEntitySet="CategoryMaster">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntityAutoMergeRules">
+      <EntityTypeMapping TypeName="PAM2Model.EntityAutoMergeRule">
+        <MappingFragment StoreEntitySet="EntityAutoMergeRule">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AutoMergeRuleId" ColumnName="AutoMergeRuleId" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="EntityRuleId" ColumnName="EntityRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntitySettings">
+      <EntityTypeMapping TypeName="PAM2Model.EntitySetting">
+        <MappingFragment StoreEntitySet="EntitySetting">
+          <ScalarProperty Name="EntityDisplayName" ColumnName="EntityDisplayName" />
+          <ScalarProperty Name="EntityLogicalName" ColumnName="EntityLogicalName" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupRules">
+      <EntityTypeMapping TypeName="PAM2Model.GroupRule">
+        <MappingFragment StoreEntitySet="GroupRule">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="GroupRuleId" ColumnName="GroupRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupRuleDetails">
+      <EntityTypeMapping TypeName="PAM2Model.GroupRuleDetail">
+        <MappingFragment StoreEntitySet="GroupRuleDetail">
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+          <ScalarProperty Name="AttributeEnum" ColumnName="AttributeEnum" />
+          <ScalarProperty Name="GroupRuleId" ColumnName="GroupRuleId" />
+          <ScalarProperty Name="GroupRuleDetailId" ColumnName="GroupRuleDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InactiveRecordSettings">
+      <EntityTypeMapping TypeName="PAM2Model.InactiveRecordSetting">
+        <MappingFragment StoreEntitySet="InactiveRecordSettings">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="InactiveRecordSettingsId" ColumnName="InactiveRecordSettingsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LanguageMasters">
+      <EntityTypeMapping TypeName="PAM2Model.LanguageMaster">
+        <MappingFragment StoreEntitySet="LanguageMaster">
+          <ScalarProperty Name="CultureCode" ColumnName="CultureCode" />
+          <ScalarProperty Name="LanguageName" ColumnName="LanguageName" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchAttributeSettings">
+      <EntityTypeMapping TypeName="PAM2Model.MatchAttributeSetting">
+        <MappingFragment StoreEntitySet="MatchAttributeSetting">
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="MatchGroupId" ColumnName="MatchGroupId" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="MatchAttributeSettingId" ColumnName="MatchAttributeSettingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchGroups">
+      <EntityTypeMapping TypeName="PAM2Model.MatchGroup">
+        <MappingFragment StoreEntitySet="MatchGroup">
+          <ScalarProperty Name="MatchKeyID" ColumnName="MatchKeyID" />
+          <ScalarProperty Name="ExcludeFromMasterKey" ColumnName="ExcludeFromMasterKey" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="MatchGroupId" ColumnName="MatchGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchGroupMasters">
+      <EntityTypeMapping TypeName="PAM2Model.MatchGroupMaster">
+        <MappingFragment StoreEntitySet="MatchGroupMaster">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MatchGroupId" ColumnName="MatchGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchKeyMasters">
+      <EntityTypeMapping TypeName="PAM2Model.MatchKeyMaster">
+        <MappingFragment StoreEntitySet="MatchKeyMaster">
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="MatchKey" ColumnName="MatchKey" />
+          <ScalarProperty Name="MatchKeyID" ColumnName="MatchKeyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchRuleDropDowns">
+      <EntityTypeMapping TypeName="PAM2Model.MatchRuleDropDown">
+        <MappingFragment StoreEntitySet="MatchRuleDropDown">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="DropDownId" ColumnName="DropDownId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchRuleDropDownDetails">
+      <EntityTypeMapping TypeName="PAM2Model.MatchRuleDropDownDetail">
+        <MappingFragment StoreEntitySet="MatchRuleDropDownDetail">
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="DropDownId" ColumnName="DropDownId" />
+          <ScalarProperty Name="DropDownDetailId" ColumnName="DropDownDetailId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MatchRuleMasters">
+      <EntityTypeMapping TypeName="PAM2Model.MatchRuleMaster">
+        <MappingFragment StoreEntitySet="MatchRuleMaster">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="MatchRuleId" ColumnName="MatchRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MemoFieldConfigurations">
+      <EntityTypeMapping TypeName="PAM2Model.MemoFieldConfiguration">
+        <MappingFragment StoreEntitySet="MemoFieldConfiguration">
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="DefaultAction" ColumnName="DefaultAction" />
+          <ScalarProperty Name="CustomName" ColumnName="CustomName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="ConfigId" ColumnName="ConfigId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriorityMasters">
+      <EntityTypeMapping TypeName="PAM2Model.PriorityMaster">
+        <MappingFragment StoreEntitySet="PriorityMaster">
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="PAM2Model.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sections">
+      <EntityTypeMapping TypeName="PAM2Model.Section">
+        <MappingFragment StoreEntitySet="Section">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionAutoMergeRules">
+      <EntityTypeMapping TypeName="PAM2Model.SessionAutoMergeRule">
+        <MappingFragment StoreEntitySet="SessionAutoMergeRule">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="EntityAutoMergeRuleId" ColumnName="EntityAutoMergeRuleId" />
+          <ScalarProperty Name="SessionAutoMergeRuleId" ColumnName="SessionAutoMergeRuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionGroups">
+      <EntityTypeMapping TypeName="PAM2Model.SessionGroup">
+        <MappingFragment StoreEntitySet="SessionGroup">
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MatchKeyID" ColumnName="MatchKeyID" />
+          <ScalarProperty Name="ExcludeFromMasterKey" ColumnName="ExcludeFromMasterKey" />
+          <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+          <ScalarProperty Name="MatchGroupId" ColumnName="MatchGroupId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionGroupId" ColumnName="SessionGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionMatchDetails">
+      <EntityTypeMapping TypeName="PAM2Model.SessionMatchDetail">
+        <MappingFragment StoreEntitySet="SessionMatchDetail">
+          <ScalarProperty Name="UnsureResultCount" ColumnName="UnsureResultCount" />
+          <ScalarProperty Name="ConfirmedResultCount" ColumnName="ConfirmedResultCount" />
+          <ScalarProperty Name="DuplicatesFound" ColumnName="DuplicatesFound" />
+          <ScalarProperty Name="RecordsFed" ColumnName="RecordsFed" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionMatchId" ColumnName="SessionMatchId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionSections">
+      <EntityTypeMapping TypeName="PAM2Model.SessionSection">
+        <MappingFragment StoreEntitySet="SessionSection">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionSectionId" ColumnName="SessionSectionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmartMergeConfigurationSettings">
+      <EntityTypeMapping TypeName="PAM2Model.SmartMergeConfigurationSetting">
+        <MappingFragment StoreEntitySet="SmartMergeConfigurationSetting">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="SystemIdleWaitTiimeInMinutes" ColumnName="SystemIdleWaitTiimeInMinutes" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="DataValue" ColumnName="DataValue" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SmartMergeConfigId" ColumnName="SmartMergeConfigId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="PAM2Model.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Enum" ColumnName="Enum" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppressionHstories">
+      <EntityTypeMapping TypeName="PAM2Model.SuppressionHstory">
+        <MappingFragment StoreEntitySet="SuppressionHstory">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+          <ScalarProperty Name="SuppressKey" ColumnName="SuppressKey" />
+          <ScalarProperty Name="SecondaryId" ColumnName="SecondaryId" />
+          <ScalarProperty Name="PrimaryId" ColumnName="PrimaryId" />
+          <ScalarProperty Name="ReviewStatus" ColumnName="ReviewStatus" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="SuppressionHistoryId" ColumnName="SuppressionHistoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SuppressionSettings">
+      <EntityTypeMapping TypeName="PAM2Model.SuppressionSetting">
+        <MappingFragment StoreEntitySet="SuppressionSettings">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="SuppressionSettingsId" ColumnName="SuppressionSettingsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThemeMasters">
+      <EntityTypeMapping TypeName="PAM2Model.ThemeMaster">
+        <MappingFragment StoreEntitySet="ThemeMaster">
+          <ScalarProperty Name="IsApplied" ColumnName="IsApplied" />
+          <ScalarProperty Name="ThemeFileName" ColumnName="ThemeFileName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="PAM2Model.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="AreTermsAccepted" ColumnName="AreTermsAccepted" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="GridHeight" ColumnName="GridHeight" />
+          <ScalarProperty Name="GridWidth" ColumnName="GridWidth" />
+          <ScalarProperty Name="SkipDeferred" ColumnName="SkipDeferred" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CRMUserId" ColumnName="CRMUserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="PAM2Model.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoOfGroupsPerSessionUsages">
+      <EntityTypeMapping TypeName="PAM2Model.NoOfGroupsPerSessionUsage">
+        <MappingFragment StoreEntitySet="NoOfGroupsPerSessionUsage">
+          <ScalarProperty Name="UsedValue" ColumnName="UsedValue" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoOfSessionsPerEntityUsages">
+      <EntityTypeMapping TypeName="PAM2Model.NoOfSessionsPerEntityUsage">
+        <MappingFragment StoreEntitySet="NoOfSessionsPerEntityUsage">
+          <ScalarProperty Name="UsedValue" ColumnName="UsedValue" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoOfGroupsPerSessionUsageHistories">
+      <EntityTypeMapping TypeName="PAM2Model.NoOfGroupsPerSessionUsageHistory">
+        <MappingFragment StoreEntitySet="NoOfGroupsPerSessionUsageHistory">
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UsedValue" ColumnName="UsedValue" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="HistoryId" ColumnName="HistoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoOfSessionsPerEntityUsageHistories">
+      <EntityTypeMapping TypeName="PAM2Model.NoOfSessionsPerEntityUsageHistory">
+        <MappingFragment StoreEntitySet="NoOfSessionsPerEntityUsageHistory">
+          <ScalarProperty Name="OperationType" ColumnName="OperationType" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UsedValue" ColumnName="UsedValue" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="HistoryId" ColumnName="HistoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusReasonSettings">
+      <EntityTypeMapping TypeName="PAM2Model.StatusReasonSetting">
+        <MappingFragment StoreEntitySet="StatusReasonSettings">
+          <ScalarProperty Name="StatusReasonFieldDisplay" ColumnName="StatusReasonFieldDisplay" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="StatusReasonFieldSchema" ColumnName="StatusReasonFieldSchema" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="StatusReasonSettingsId" ColumnName="StatusReasonSettingsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestRecordDetectionRules">
+      <EntityTypeMapping TypeName="PAM2Model.BestRecordDetectionRule">
+        <MappingFragment StoreEntitySet="BestRecordDetectionRules">
+          <ScalarProperty Name="Lead" ColumnName="Lead" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="RuleEnum" ColumnName="RuleEnum" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestRecordRuleParameters">
+      <EntityTypeMapping TypeName="PAM2Model.BestRecordRuleParameter">
+        <MappingFragment StoreEntitySet="BestRecordRuleParameters">
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestRecordRuleParametersMasters">
+      <EntityTypeMapping TypeName="PAM2Model.BestRecordRuleParametersMaster">
+        <MappingFragment StoreEntitySet="BestRecordRuleParametersMaster">
+          <ScalarProperty Name="ParameterEnum" ColumnName="ParameterEnum" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestRecordDetectionSettings">
+      <EntityTypeMapping TypeName="PAM2Model.BestRecordDetectionSetting">
+        <MappingFragment StoreEntitySet="BestRecordDetectionSettings">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="OrderOfRules" ColumnName="OrderOfRules" />
+          <ScalarProperty Name="RuleParamId" ColumnName="RuleParamId" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionBestRecordSettings">
+      <EntityTypeMapping TypeName="PAM2Model.SessionBestRecordSetting">
+        <MappingFragment StoreEntitySet="SessionBestRecordSettings">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="BestRecordDetectionSettingsId" ColumnName="BestRecordDetectionSettingsId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetRuleParameters">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetRuleParameter">
+        <MappingFragment StoreEntitySet="BestFieldDetRuleParameters">
+          <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldsDetRuleParametersMasters">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldsDetRuleParametersMaster">
+        <MappingFragment StoreEntitySet="BestFieldsDetRuleParametersMaster">
+          <ScalarProperty Name="ParameterEnum" ColumnName="ParameterEnum" />
+          <ScalarProperty Name="Parameter" ColumnName="Parameter" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetGroupEntitywiseDetails">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetGroupEntitywiseDetail">
+        <MappingFragment StoreEntitySet="BestFieldDetGroupEntitywiseDetail">
+          <ScalarProperty Name="FieldDisplayName" ColumnName="FieldDisplayName" />
+          <ScalarProperty Name="FieldSchemaName" ColumnName="FieldSchemaName" />
+          <ScalarProperty Name="BestFieldDetGroupEntitywiseId" ColumnName="BestFieldDetGroupEntitywiseId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetGroupEntitywises">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetGroupEntitywise">
+        <MappingFragment StoreEntitySet="BestFieldDetGroupEntitywise">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="BestFieldDetGroupMasterId" ColumnName="BestFieldDetGroupMasterId" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetGroupMasters">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetGroupMaster">
+        <MappingFragment StoreEntitySet="BestFieldDetGroupMaster">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="FieldGroupName" ColumnName="FieldGroupName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetectionRuleTypes">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetectionRuleType">
+        <MappingFragment StoreEntitySet="BestFieldDetectionRuleTypes">
+          <ScalarProperty Name="Lead" ColumnName="Lead" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="RuleTypeEnum" ColumnName="RuleTypeEnum" />
+          <ScalarProperty Name="RuleType" ColumnName="RuleType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoPromoteAndFillLogDetails">
+      <EntityTypeMapping TypeName="PAM2Model.AutoPromoteAndFillLogDetail">
+        <MappingFragment StoreEntitySet="AutoPromoteAndFillLogDetails">
+          <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+          <ScalarProperty Name="LoggedInUser" ColumnName="LoggedInUser" />
+          <ScalarProperty Name="RecordsProcessed" ColumnName="RecordsProcessed" />
+          <ScalarProperty Name="Process" ColumnName="Process" />
+          <ScalarProperty Name="EndDateTime" ColumnName="EndDateTime" />
+          <ScalarProperty Name="StartDateTime" ColumnName="StartDateTime" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="AutoPromoteAndFillID" ColumnName="AutoPromoteAndFillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetectionRules">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetectionRule">
+        <MappingFragment StoreEntitySet="BestFieldDetectionRules">
+          <ScalarProperty Name="RuleEnum" ColumnName="RuleEnum" />
+          <ScalarProperty Name="RuleName" ColumnName="RuleName" />
+          <ScalarProperty Name="BestFieldDetectionRuleTypesId" ColumnName="BestFieldDetectionRuleTypesId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionThresholdSettings">
+      <EntityTypeMapping TypeName="PAM2Model.SessionThresholdSetting">
+        <MappingFragment StoreEntitySet="SessionThresholdSetting">
+          <ScalarProperty Name="ValueToNull" ColumnName="ValueToNull" />
+          <ScalarProperty Name="FetchXML" ColumnName="FetchXML" />
+          <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+          <ScalarProperty Name="ViewType" ColumnName="ViewType" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="MatchKeyID" ColumnName="MatchKeyID" />
+          <ScalarProperty Name="TreatNulls" ColumnName="TreatNulls" />
+          <ScalarProperty Name="IncludeOriginal" ColumnName="IncludeOriginal" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Threshold2" ColumnName="Threshold2" />
+          <ScalarProperty Name="Threshold1" ColumnName="Threshold1" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionThresholdId" ColumnName="SessionThresholdId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttributeSettings">
+      <EntityTypeMapping TypeName="PAM2Model.AttributeSetting">
+        <MappingFragment StoreEntitySet="AttributeSetting">
+          <ScalarProperty Name="UseForAutoMerge" ColumnName="UseForAutoMerge" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ExcludeUpdate" ColumnName="ExcludeUpdate" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="CustomName" ColumnName="CustomName" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="SchemaName" ColumnName="SchemaName" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="AttributeSettingId" ColumnName="AttributeSettingId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetectionSettings">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetectionSetting">
+        <MappingFragment StoreEntitySet="BestFieldDetectionSettings">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="AttributeSettingId" ColumnName="AttributeSettingId" />
+          <ScalarProperty Name="IsMaster" ColumnName="IsMaster" />
+          <ScalarProperty Name="OrderOfRules" ColumnName="OrderOfRules" />
+          <ScalarProperty Name="RuleParamId" ColumnName="RuleParamId" />
+          <ScalarProperty Name="RuleId" ColumnName="RuleId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BestFieldDetPicklistFieldDetails">
+      <EntityTypeMapping TypeName="PAM2Model.BestFieldDetPicklistFieldDetail">
+        <MappingFragment StoreEntitySet="BestFieldDetPicklistFieldDetail">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="BestFieldDetectionSettingsId" ColumnName="BestFieldDetectionSettingsId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="PAM2Model.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="IsAutoPromoteFillAll" ColumnName="IsAutoPromoteFillAll" />
+          <ScalarProperty Name="IsAutoFillAll" ColumnName="IsAutoFillAll" />
+          <ScalarProperty Name="IsAutoPromotedAll" ColumnName="IsAutoPromotedAll" />
+          <ScalarProperty Name="IsAutoFillAndPromoteInProgress" ColumnName="IsAutoFillAndPromoteInProgress" />
+          <ScalarProperty Name="IsAutoFillInProgress" ColumnName="IsAutoFillInProgress" />
+          <ScalarProperty Name="IsAutoPromoteInProgress" ColumnName="IsAutoPromoteInProgress" />
+          <ScalarProperty Name="ExecutionEnd" ColumnName="ExecutionEnd" />
+          <ScalarProperty Name="ExecutedOn" ColumnName="ExecutedOn" />
+          <ScalarProperty Name="ExecutedBy" ColumnName="ExecutedBy" />
+          <ScalarProperty Name="OutputFilePath" ColumnName="OutputFilePath" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsDeactivated" ColumnName="IsDeactivated" />
+          <ScalarProperty Name="IsAutoMergeInProgress" ColumnName="IsAutoMergeInProgress" />
+          <ScalarProperty Name="MergeStatus" ColumnName="MergeStatus" />
+          <ScalarProperty Name="GroupCount" ColumnName="GroupCount" />
+          <ScalarProperty Name="RefreshDate" ColumnName="RefreshDate" />
+          <ScalarProperty Name="EntitySettingId" ColumnName="EntitySettingId" />
+          <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SessionResults">
+      <EntityTypeMapping TypeName="PAM2Model.SessionResult">
+        <MappingFragment StoreEntitySet="SessionResult">
+          <ScalarProperty Name="AutoPromoteFill" ColumnName="AutoPromoteFill" />
+          <ScalarProperty Name="AutoFill" ColumnName="AutoFill" />
+          <ScalarProperty Name="AutoPromote" ColumnName="AutoPromote" />
+          <ScalarProperty Name="UserNotes" ColumnName="UserNotes" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="EntityHeaderFieldValue" ColumnName="EntityHeaderFieldValue" />
+          <ScalarProperty Name="CurentStatusDateTime" ColumnName="CurentStatusDateTime" />
+          <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+          <ScalarProperty Name="ReviewStatus" ColumnName="ReviewStatus" />
+          <ScalarProperty Name="PunchOut" ColumnName="PunchOut" />
+          <ScalarProperty Name="PunchIn" ColumnName="PunchIn" />
+          <ScalarProperty Name="MatchScore" ColumnName="MatchScore" />
+          <ScalarProperty Name="GroupRank" ColumnName="GroupRank" />
+          <ScalarProperty Name="GroupNo" ColumnName="GroupNo" />
+          <ScalarProperty Name="ValidGroup" ColumnName="ValidGroup" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionResultId" ColumnName="SessionResultId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

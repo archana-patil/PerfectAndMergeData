@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a6b0ad6473654ce98ab6af9756a1829e" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="PAM2Model.AutoMergeLogDetail" Width="1.5" PointX="1.3414611692267755" PointY="17.114382423979407" />
+        <EntityTypeShape EntityType="PAM2Model.AutoMergeRuleMaster" Width="1.5" PointX="9.9978542001907957" PointY="7.1647900674328158" />
+        <EntityTypeShape EntityType="PAM2Model.CategoryDetail" Width="1.5" PointX="7.4447885637380127" PointY="16.107081033339295" />
+        <EntityTypeShape EntityType="PAM2Model.CategoryMaster" Width="1.5" PointX="0.8389394249948392" PointY="1.5259487039996071" />
+        <EntityTypeShape EntityType="PAM2Model.EntityAutoMergeRule" Width="1.5" PointX="11.173571582498759" PointY="10.181358208032957" />
+        <EntityTypeShape EntityType="PAM2Model.EntitySetting" Width="1.5" PointX="10.830500218472675" PointY="29.181825144766748" />
+        <EntityTypeShape EntityType="PAM2Model.GroupRule" Width="1.5" PointX="8.1109091043988748" PointY="1.1015365426901433" />
+        <EntityTypeShape EntityType="PAM2Model.GroupRuleDetail" Width="1.5" PointX="1.2854359472568313" PointY="26.509694707817257" />
+        <EntityTypeShape EntityType="PAM2Model.InactiveRecordSetting" Width="1.5" PointX="8.25374028843536" PointY="8.3165636101349083" />
+        <EntityTypeShape EntityType="PAM2Model.LanguageMaster" Width="1.5" PointX="9.4314711659361947" PointY="22.850419323356086" />
+        <EntityTypeShape EntityType="PAM2Model.MatchAttributeSetting" Width="1.625" PointX="5.375" PointY="0.5" />
+        <EntityTypeShape EntityType="PAM2Model.MatchGroup" Width="1.5" PointX="7.3777987842344679" PointY="15.117606930023808" />
+        <EntityTypeShape EntityType="PAM2Model.MatchGroupMaster" Width="1.75" PointX="11.375" PointY="2" />
+        <EntityTypeShape EntityType="PAM2Model.MatchKeyMaster" Width="1.5" PointX="8.8897776980371113" PointY="14.663044593605699" />
+        <EntityTypeShape EntityType="PAM2Model.MatchRuleDropDown" Width="1.5" PointX="7.7321344202999658" PointY="20.35435608977189" />
+        <EntityTypeShape EntityType="PAM2Model.MatchRuleDropDownDetail" Width="1.5" PointX="1.4211616969765917" PointY="11.593499531780136" />
+        <EntityTypeShape EntityType="PAM2Model.MatchRuleMaster" Width="1.5" PointX="2.75" PointY="26.75" />
+        <EntityTypeShape EntityType="PAM2Model.MemoFieldConfiguration" Width="1.75" PointX="13.625" PointY="27.375" />
+        <EntityTypeShape EntityType="PAM2Model.PriorityMaster" Width="1.5" PointX="11.539226431185019" PointY="22.259949456090084" />
+        <EntityTypeShape EntityType="PAM2Model.Role" Width="1.5" PointX="8.4577896019712977" PointY="19.312170037679454" />
+        <EntityTypeShape EntityType="PAM2Model.Section" Width="1.5" PointX="0.60896122483953885" PointY="17.5278279415927" />
+        <EntityTypeShape EntityType="PAM2Model.SessionAutoMergeRule" Width="1.5" PointX="10.789892373043063" PointY="16.0589007213986" />
+        <EntityTypeShape EntityType="PAM2Model.SessionGroup" Width="1.5" PointX="5.648729366086763" PointY="21.865687037755588" />
+        <EntityTypeShape EntityType="PAM2Model.SessionMatchDetail" Width="1.5" PointX="6.7577478432831111" PointY="30.456518932458255" />
+        <EntityTypeShape EntityType="PAM2Model.SessionSection" Width="1.5" PointX="10.018135567204158" PointY="8.6622071157499256" />
+        <EntityTypeShape EntityType="PAM2Model.SmartMergeConfigurationSetting" Width="2" PointX="13.25" PointY="12.875" />
+        <EntityTypeShape EntityType="PAM2Model.Status" Width="1.5" PointX="3.3370762985838" PointY="17.8905350500208" />
+        <EntityTypeShape EntityType="PAM2Model.SuppressionHstory" Width="1.75" PointX="9.125" PointY="19.625" />
+        <EntityTypeShape EntityType="PAM2Model.SuppressionSetting" Width="1.5" PointX="4.8400963436998881" PointY="9.44183479689147" />
+        <EntityTypeShape EntityType="PAM2Model.ThemeMaster" Width="1.5" PointX="1.25" PointY="15.125" />
+        <EntityTypeShape EntityType="PAM2Model.User" Width="1.5" PointX="9.125" PointY="27" />
+        <EntityTypeShape EntityType="PAM2Model.UserRole" Width="1.5" PointX="1.8572780591702451" PointY="8.0278925486038872" />
+        <AssociationConnector Association="PAM2Model.FK_AutoMergeLogDetails_AutoMergeLogDetails" />
+        <AssociationConnector Association="PAM2Model.FK_AutoMergeLogDetails_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_AutoMergeLogDetails_User" />
+        <AssociationConnector Association="PAM2Model.FK_EntityAutoMergeRule_AutoMergeRuleMaster" />
+        <AssociationConnector Association="PAM2Model.FK_CategoryDetail_CategoryMaster" />
+        <AssociationConnector Association="PAM2Model.FK_EntityAutoMergeRule_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_SessionAutoMergeRule_EntityAutoMergeRule" />
+        <AssociationConnector Association="PAM2Model.FK_MatchAttributeSetting_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroup_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_Section_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionHstory_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_GroupRule_MatchRuleMaster" />
+        <AssociationConnector Association="PAM2Model.FK_GroupRuleDetail_GroupRule" />
+        <AssociationConnector Association="PAM2Model.FK_InactiveRecordSettings_User" />
+        <AssociationConnector Association="PAM2Model.FK_InactiveRecordSettings_User1" />
+        <AssociationConnector Association="PAM2Model.FK_MatchAttributeSetting_MatchGroup" />
+        <AssociationConnector Association="PAM2Model.FK_MatchAttributeSetting_User" />
+        <AssociationConnector Association="PAM2Model.FK_MatchAttributeSetting_User1" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroup_MatchKeyMaster" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroup_PriorityMaster" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroup_User" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroup_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SessionGroup_MatchGroup" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroupMaster_User" />
+        <AssociationConnector Association="PAM2Model.FK_MatchGroupMaster_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SessionGroup_MatchKeyMaster" />
+        <AssociationConnector Association="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDown" />
+        <AssociationConnector Association="PAM2Model.FK_MatchRuleDropDownDetail_MatchRuleDropDownDetail" />
+        <AssociationConnector Association="PAM2Model.FK_SessionGroup_PriorityMaster" />
+        <AssociationConnector Association="PAM2Model.FK_UserRole_Role" />
+        <AssociationConnector Association="PAM2Model.FK_Section_User" />
+        <AssociationConnector Association="PAM2Model.FK_Section_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SessionSection_Section" />
+        <AssociationConnector Association="PAM2Model.FK_SessionAutoMergeRule_SessionAutoMergeRule" />
+        <AssociationConnector Association="PAM2Model.FK_SessionGroup_User" />
+        <AssociationConnector Association="PAM2Model.FK_SessionSection_User" />
+        <AssociationConnector Association="PAM2Model.FK_SessionSection_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SmartMergeConfigurationSetting_User" />
+        <AssociationConnector Association="PAM2Model.FK_SmartMergeConfigurationSetting_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionHstory_Status" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionHstory_User" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionHstory_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionSettings_User" />
+        <AssociationConnector Association="PAM2Model.FK_SuppressionSettings_User1" />
+        <AssociationConnector Association="PAM2Model.FK_User_User" />
+        <AssociationConnector Association="PAM2Model.FK_User_User1" />
+        <AssociationConnector Association="PAM2Model.FK_UserRole_User" />
+        <EntityTypeShape EntityType="PAM2Model.NoOfGroupsPerSessionUsage" Width="1.5" PointX="9.125" PointY="17.125" />
+        <EntityTypeShape EntityType="PAM2Model.NoOfSessionsPerEntityUsage" Width="1.5" PointX="7.9988866001362391" PointY="22.714663307515281" />
+        <EntityTypeShape EntityType="PAM2Model.NoOfGroupsPerSessionUsageHistory" Width="1.5" PointX="12" PointY="5.375" />
+        <EntityTypeShape EntityType="PAM2Model.NoOfSessionsPerEntityUsageHistory" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="PAM2Model.BestRecordDetectionRule" Width="1.75" PointX="13.375" PointY="10" />
+        <EntityTypeShape EntityType="PAM2Model.BestRecordRuleParameter" Width="1.5" PointX="15.875" PointY="16.375" />
+        <EntityTypeShape EntityType="PAM2Model.BestRecordRuleParametersMaster" Width="1.5" PointX="13.625" PointY="19.25" />
+        <AssociationConnector Association="PAM2Model.FK_BestRecordRuleParameters_BestRecordRuleParametersMaster" />
+        <EntityTypeShape EntityType="PAM2Model.BestRecordDetectionSetting" Width="1.875" PointX="15.875" PointY="12" />
+        <EntityTypeShape EntityType="PAM2Model.SessionBestRecordSetting" Width="2" PointX="18.125" PointY="9.375" />
+        <AssociationConnector Association="PAM2Model.FK_BestRecordDetectionSettings_BestRecordDetectionRules" />
+        <AssociationConnector Association="PAM2Model.FK_BestRecordDetectionSettings_BestRecordRuleParametersMaster" />
+        <AssociationConnector Association="PAM2Model.FK_SessionBestRecordSettings_BestRecordDetectionSettings" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldDetRuleParameter" Width="1.625" PointX="23.625" PointY="16.25" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldsDetRuleParametersMaster" Width="1.875" PointX="18.375" PointY="16.25" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetRuleParameters_BestFieldsDetRuleParametersMaster" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldDetectionRuleType" Width="1.875" PointX="14" PointY="22.25" />
+        <EntityTypeShape EntityType="PAM2Model.AutoPromoteAndFillLogDetail" Width="1.5" PointX="23.25" PointY="31.75" />
+        <AssociationConnector Association="PAM2Model.FK_AutoPromoteAndFill_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_AutoPromoteAndFill_User" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldDetectionRule" Width="1.5" PointX="23.875" PointY="19.625" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetectionRules_BestFieldDetectionRuleTypes" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetRuleParameters_BestRecordDetectionRules" />
+        <AssociationConnector Association="PAM2Model.FK_BestRecordRuleParameters_BestRecordDetectionRules" />
+        <EntityTypeShape EntityType="PAM2Model.SessionThresholdSetting" Width="1.5" PointX="19.625" PointY="19.875" />
+        <AssociationConnector Association="PAM2Model.FK_SessionThresholdSetting_LanguageMaster" />
+        <AssociationConnector Association="PAM2Model.FK_SessionThresholdSetting_SessionThresholdSetting" />
+        <AssociationConnector Association="PAM2Model.FK_SessionThresholdSetting_User" />
+        <AssociationConnector Association="PAM2Model.FK_SessionThresholdSetting_User1" />
+        <EntityTypeShape EntityType="PAM2Model.AttributeSetting" Width="1.5" PointX="22.625" PointY="25.25" />
+        <AssociationConnector Association="PAM2Model.FK_AttributeSetting_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_AttributeSetting_Section" />
+        <AssociationConnector Association="PAM2Model.FK_AttributeSetting_User" />
+        <AssociationConnector Association="PAM2Model.FK_AttributeSetting_User1" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldDetectionSetting" Width="1.5" PointX="26.125" PointY="21.25" />
+        <EntityTypeShape EntityType="PAM2Model.BestFieldDetPicklistFieldDetail" Width="1.5" PointX="28.375" PointY="22.25" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetectionSettings_AttributeSetting" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetectionSettings_BestFieldDetectionRules" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetectionSettings_BestFieldsDetRuleParametersMaster" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetectionSettings_Section" />
+        <AssociationConnector Association="PAM2Model.FK_BestFieldDetPicklistFieldDetail_BestFieldDetectionSettings" />
+        <EntityTypeShape EntityType="PAM2Model.Session" Width="1.5" PointX="17.25" PointY="29.5" />
+        <EntityTypeShape EntityType="PAM2Model.SessionResult" Width="1.5" PointX="19.5" PointY="29.375" />
+        <AssociationConnector Association="PAM2Model.FK_AttributeSetting_Session" />
+        <AssociationConnector Association="PAM2Model.FK_AutoMergeLogDetails_Session" />
+        <AssociationConnector Association="PAM2Model.FK_AutoPromoteAndFill_Session" />
+        <AssociationConnector Association="PAM2Model.FK_Session_EntitySetting" />
+        <AssociationConnector Association="PAM2Model.FK_MatchAttributeSetting_Session" />
+        <AssociationConnector Association="PAM2Model.FK_Session_Session" />
+        <AssociationConnector Association="PAM2Model.FK_Session_Status" />
+        <AssociationConnector Association="PAM2Model.FK_Session_User" />
+        <AssociationConnector Association="PAM2Model.FK_Session_User1" />
+        <AssociationConnector Association="PAM2Model.FK_SessionAutoMergeRule_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionBestRecordSettings_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionGroup_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionMatchDetail_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionResult_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionSection_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionThresholdSetting_Session" />
+        <AssociationConnector Association="PAM2Model.FK_SessionResult_Status" />
+        <AssociationConnector Association="PAM2Model.FK_SessionResult_User" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

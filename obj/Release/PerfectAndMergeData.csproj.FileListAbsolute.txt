@@ -1,0 +1,20 @@
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.dll.config
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.dll
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.pdb
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\EntityFramework.dll
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\EntityFramework.SqlServer.dll
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\EntityFramework.xml
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\bin\Release\EntityFramework.SqlServer.xml
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.csprojResolveAssemblyReference.cache
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.dll
+D:\D Drive data of dipali\Development\Customers\DQGlobal\PAM2\PAMONLINE1\DQGlobal_iPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.pdb
+E:\DQGPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.dll.config
+E:\DQGPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.dll
+E:\DQGPAM\PerfectAndMergeData\bin\Release\PerfectAndMergeData.pdb
+E:\DQGPAM\PerfectAndMergeData\bin\Release\EntityFramework.dll
+E:\DQGPAM\PerfectAndMergeData\bin\Release\EntityFramework.SqlServer.dll
+E:\DQGPAM\PerfectAndMergeData\bin\Release\EntityFramework.xml
+E:\DQGPAM\PerfectAndMergeData\bin\Release\EntityFramework.SqlServer.xml
+E:\DQGPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.csprojResolveAssemblyReference.cache
+E:\DQGPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.dll
+E:\DQGPAM\PerfectAndMergeData\obj\Release\PerfectAndMergeData.pdb
